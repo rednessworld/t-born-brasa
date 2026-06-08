@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Born Brasa — Brasa y Ahumado en El Born, Barcelona</title>
+  <meta name="description" content="T-Born Brasa: brasa y ahumado lento en el corazón de El Born, Barcelona. Costillas, angus ribs y combos. Mar–Dom 13:00–16:00 y 20:00–01:00.">
+  <meta name="theme-color" content="#0d0b09">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="T-Born Brasa — Fuego, tiempo y sabor">
+  <meta property="og:description" content="Brasa y ahumado lento en el corazón de El Born, Barcelona. Costillas, angus ribs y combos para compartir.">
+  <meta property="og:url"         content="https://tborn-brasa.vercel.app">
+  <meta property="og:image"       content="https://tborn-brasa.vercel.app/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"     content="es_ES">
+  <meta property="og:site_name"  content="T-Born Brasa">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="T-Born Brasa — Fuego, tiempo y sabor">
+  <meta name="twitter:description" content="Brasa y ahumado lento en El Born, Barcelona.">
+  <meta name="twitter:image"       content="https://tborn-brasa.vercel.app/images/og-image.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tborn-brasa.vercel.app">
+
+  <!-- Favicon & manifest -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Preloads: hero image + both fonts (required per project rules) -->
+  <link rel="preload" as="image"
+        href="images/Hero.webp"
+        imagesrcset="images/Hero-mobile.webp 750w, images/Hero.webp 1920w"
+        imagesizes="100vw"
+        fetchpriority="high">
+  <link rel="preload" as="font" href="fonts/PlayfairDisplay-Bold.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="fonts/Lato-Light.woff2" type="font/woff2" crossorigin>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "T-Born Brasa",
+    "description": "Brasa y ahumado lento en el corazón de El Born, Barcelona. Costillas, angus ribs y combos.",
+    "url": "https://tborn-brasa.vercel.app",
+    "telephone": "+34935577591",
+    "image": "https://tborn-brasa.vercel.app/images/og-image.jpg",
+    "logo": "https://tborn-brasa.vercel.app/images/Logo.webp",
+    "priceRange": "€€€",
+    "servesCuisine": ["Steakhouse", "Brasa", "BBQ", "Ahumados"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer del Comerç, 24",
+      "postalCode": "08003",
+      "addressLocality": "Barcelona",
+      "addressRegion": "Catalunya",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.3840,
+      "longitude": 2.1813
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "13:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "20:00",
+        "closes": "01:00"
+      }
+    ],
+    "sameAs": ["https://www.instagram.com/tbornbrasa/"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": 127,
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ── LOADING SCREEN ──────────────────────────────────── -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <span class="loader__brand" data-i18n="loader.text">T-Born Brasa</span>
+    <span class="loader__line" aria-hidden="true"></span>
+  </div>
+
+  <!-- ── SKIP NAVIGATION ────────────────────────────────── -->
+  <a class="skip-nav" href="#main" data-i18n="skip.nav">Ir al contenido</a>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────── -->
+  <header id="nav" role="banner">
+    <div class="nav__inner container">
+
+      <!-- Logo -->
+      <a href="/" class="nav__logo" aria-label="T-Born Brasa — inicio">
+        <img src="images/Logo.webp" alt="T-Born Brasa" width="120" height="52" loading="eager">
+      </a>
+
+      <!-- Desktop center links -->
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="#about"   data-i18n="nav.about">Nosotros</a>
+        <a href="#menu"    data-i18n="nav.menu">Carta</a>
+        <a href="#gallery" data-i18n="nav.gallery">Galería</a>
+        <a href="#find-us" data-i18n="nav.findus">Encuéntranos</a>
+      </nav>
+
+      <!-- Right side actions -->
+      <div class="nav__actions">
+        <!-- Language switcher (desktop) -->
+        <div class="nav__lang" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+          <button class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <!-- CTA button (desktop) -->
+        <a href="#find-us" class="btn btn--outline nav__cta" data-i18n="nav.reserve">Reservar Mesa</a>
+        <!-- Hamburger (mobile) -->
+        <button
+          id="nav-toggle"
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-mobile"
+          data-i18n-aria="nav.aria.open"
+          aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <nav id="nav-mobile"
+       class="nav__mobile"
+       aria-label="Menú móvil"
+       aria-hidden="true">
+    <ul>
+      <li><a href="#about"   data-i18n="nav.about">Nosotros</a></li>
+      <li><a href="#menu"    data-i18n="nav.menu">Carta</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Galería</a></li>
+      <li><a href="#find-us" data-i18n="nav.findus">Encuéntranos</a></li>
+    </ul>
+    <a href="#find-us" class="btn btn--outline nav__mobile-cta" data-i18n="nav.reserve">Reservar Mesa</a>
+    <!-- Language switcher (mobile) -->
+    <div class="nav__lang" role="group" aria-label="Seleccionar idioma">
+      <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+      <button class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- h1 sr-only for SEO, visual heading is in hero -->
+    <h1 class="sr-only">T-Born Brasa — Brasa y Ahumado en El Born, Barcelona</h1>
+
+    <!-- ════════════════════════════════════════════════════
+         HERO
+         ════════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero">
+
+      <!-- Background image with parallax -->
+      <div class="hero__bg" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 767px)" srcset="images/Hero-mobile.webp">
+          <img
+            id="hero-parallax-img"
+            src="images/Hero.webp"
+            alt=""
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+            loading="eager">
+        </picture>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="hero__content">
+        <div class="container">
+          <div class="hero__inner">
+            <p class="hero__eyebrow" data-i18n="hero.eyebrow">El Born &middot; Barcelona</p>
+            <h2 class="hero__headline" data-i18n="hero.headline">Fuego, tiempo y sabor</h2>
+            <p class="hero__sub" data-i18n="hero.sub">Brasa y ahumado lento en el corazón de El Born. Carnes seleccionadas, técnica de fuego auténtica.</p>
+            <a href="#find-us" class="btn btn--primary hero__cta" data-i18n="hero.cta">Reservar Mesa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         ABOUT
+         ════════════════════════════════════════════════════ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- Image (right on desktop, top on mobile) -->
+          <div class="about__image-wrap reveal--scale">
+            <img
+              class="about__image"
+              src="images/interior1.webp"
+              alt="Interior del restaurante T-Born Brasa"
+              data-i18n-aria="about.img.alt"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async">
+          </div>
+
+          <!-- Text (left on desktop) -->
+          <div class="about__text">
+            <span class="section-label reveal" data-i18n="about.label">Nuestra historia</span>
+            <h2 class="reveal--heading" data-i18n="about.heading">El Arte del Fuego</h2>
+            <p class="reveal" style="transition-delay: 80ms" data-i18n="about.p1">En T-Born Brasa no solo cocinamos carne: la transformamos. Cada pieza pasa horas sobre el fuego y el humo de madera de encina, desarrollando una complejidad de sabor que solo el tiempo puede crear.</p>
+            <p class="reveal" style="transition-delay: 160ms" data-i18n="about.p2">En el corazón de El Born, nuestro restaurante es un homenaje a la cocina de brasa más auténtica. Carnes de primera selección, ahumados lentos y una pasión por el producto que se siente en cada bocado.</p>
+            <a href="#find-us" class="about__cta reveal" style="transition-delay: 240ms" data-i18n="about.cta">Descubrir nuestra historia &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         SIGNATURE SELECTIONS
+         ════════════════════════════════════════════════════ -->
+    <section id="selections" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal" data-i18n="selections.label">Selecciones especiales</span>
+          <h2 class="reveal--heading" data-i18n="selections.heading">Nuestros Platos Estrella</h2>
+          <p class="reveal" data-i18n="selections.sub">Los favoritos de nuestra cocina, lentos al fuego.</p>
+        </div>
+
+        <div class="selections__grid stagger-group">
+
+          <!-- Card 1: Costillas de Cerdo -->
+          <article class="selection-card reveal">
+            <div class="selection-card__img-wrap">
+              <img
+                class="selection-card__img"
+                src="images/food1.webp"
+                alt="Costillas de cerdo ahumadas de T-Born Brasa"
+                data-i18n-aria="sel.card1.alt"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async">
+            </div>
+            <div class="selection-card__body">
+              <span class="selection-card__badge" data-i18n="sel.card1.badge">350g &middot; €35</span>
+              <h3 class="selection-card__name" data-i18n="sel.card1.name">Costillas de Cerdo</h3>
+              <p class="selection-card__desc" data-i18n="sel.card1.desc">Ahumadas lentamente durante 6 horas con madera de encina. Jugosas, tiernas y llenas de sabor.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Angus Ribs -->
+          <article class="selection-card reveal">
+            <div class="selection-card__img-wrap">
+              <img
+                class="selection-card__img"
+                src="images/food2.webp"
+                alt="Costillas Angus ahumadas de T-Born Brasa"
+                data-i18n-aria="sel.card2.alt"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async">
+            </div>
+            <div class="selection-card__body">
+              <span class="selection-card__badge" data-i18n="sel.card2.badge">700g &middot; €48</span>
+              <h3 class="selection-card__name" data-i18n="sel.card2.name">Angus Ribs</h3>
+              <p class="selection-card__desc" data-i18n="sel.card2.desc">Costillas premium Angus, 8 horas al humo, glaseadas con nuestra salsa BBQ de la casa.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Combo El Born -->
+          <article class="selection-card reveal">
+            <div class="selection-card__img-wrap">
+              <img
+                class="selection-card__img"
+                src="images/food3.webp"
+                alt="Combo El Born de T-Born Brasa"
+                data-i18n-aria="sel.card3.alt"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async">
+            </div>
+            <div class="selection-card__body">
+              <span class="selection-card__badge" data-i18n="sel.card3.badge">1kg &middot; €100</span>
+              <h3 class="selection-card__name" data-i18n="sel.card3.name">Combo El Born</h3>
+              <p class="selection-card__desc" data-i18n="sel.card3.desc">Lo mejor de la casa en un solo combo para dos: costillas, cerdo desmechado y ternera.</p>
+            </div>
+          </article>
+
+        </div><!-- /.stagger-group -->
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         REVIEWS
+         ════════════════════════════════════════════════════ -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section-header" style="text-align:center; margin-bottom: 3rem;">
+          <span class="section-label reveal" data-i18n="reviews.label">Opiniones</span>
+          <h2 class="reveal--heading" data-i18n="reviews.heading">Lo que dicen nuestros clientes</h2>
+          <div class="reviews__overall reveal">
+            <span class="reviews__stars" role="img" aria-label="4.8 de 5 estrellas">★★★★★</span>
+            <span class="reviews__score">4.8</span>
+            <span class="reviews__count" data-i18n="reviews.overall">4.8 en Google &middot; 127 reseñas</span>
+          </div>
+        </div>
+
+        <div class="reviews__grid stagger-group">
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 estrellas">★★★★★</div>
+            <p class="review-card__text">La carne es increíble, especialmente las costillas ahumadas. El ambiente es perfecto para una noche especial.</p>
+            <p class="review-card__author">María G.</p>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 stars">★★★★★</div>
+            <p class="review-card__text">Best ribs in Barcelona. The slow smoked Angus ribs were absolutely phenomenal. Will be back.</p>
+            <p class="review-card__author">James T.</p>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 estrelles">★★★★★</div>
+            <p class="review-card__text">Lloc perfecte per sopar al Born. La qualitat de la carn és excel·lent i el servei molt atent.</p>
+            <p class="review-card__author">Pau R.</p>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 estrellas">★★★★★</div>
+            <p class="review-card__text">El combo El Born para dos personas es una experiencia increíble. Recomendadísimo.</p>
+            <p class="review-card__author">Carlos M.</p>
+          </article>
+
+        </div><!-- /.stagger-group -->
+
+        <div style="text-align:center; margin-top: 2.5rem;">
+          <a href="https://g.page/r/tbornbrasa/review"
+             class="about__cta reveal"
+             target="_blank"
+             rel="noopener"
+             data-i18n="reviews.google">Ver todas las reseñas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         MENU
+         ════════════════════════════════════════════════════ -->
+    <section id="menu" class="section section--alt">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label reveal" data-i18n="menu.label">La Carta</span>
+          <h2 class="reveal--heading" data-i18n="menu.heading">Nuestra Carta</h2>
+        </div>
+
+        <!-- Tab list -->
+        <div class="menu__tabs" role="tablist" aria-label="Categorías del menú">
+
+          <button class="menu__tab menu__tab--active"
+                  role="tab"
+                  id="tab-entradas"
+                  aria-controls="panel-entradas"
+                  aria-selected="true"
+                  data-i18n="menu.tab.entradas">Entrantes</button>
+
+          <button class="menu__tab"
+                  role="tab"
+                  id="tab-smoked"
+                  aria-controls="panel-smoked"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-i18n="menu.tab.smoked">Ahumados</button>
+
+          <button class="menu__tab"
+                  role="tab"
+                  id="tab-brasa"
+                  aria-controls="panel-brasa"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-i18n="menu.tab.brasa">A la Brasa</button>
+
+          <button class="menu__tab"
+                  role="tab"
+                  id="tab-arroces"
+                  aria-controls="panel-arroces"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-i18n="menu.tab.arroces">Arroces</button>
+
+          <button class="menu__tab"
+                  role="tab"
+                  id="tab-acomp"
+                  aria-controls="panel-acomp"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-i18n="menu.tab.acomp">Acompañantes</button>
+
+          <button class="menu__tab"
+                  role="tab"
+                  id="tab-postres"
+                  aria-controls="panel-postres"
+                  aria-selected="false"
+                  tabindex="-1"
+                  data-i18n="menu.tab.postres">Postres</button>
+
+        </div><!-- /tablist -->
+
+        <!-- PANEL: Entrantes -->
+        <div id="panel-entradas" role="tabpanel" aria-labelledby="tab-entradas">
+          <div class="menu__grid stagger-group">
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.ent1.name">Tomate con Burrata</h3>
+                <span class="menu-item__price">€10</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.ent1.desc">Tomate de temporada, burrata cremosa, albahaca fresca y aceite de oliva virgen extra.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.ent2.name">Ensalada de Pepino y Tomate</h3>
+                <span class="menu-item__price">€10</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.ent2.desc">Ensalada fresca de pepino crujiente, tomate cherry, hierbas y aliño de limón.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.ent3.name">Tuétano de Vaca Asado con Steak Tartar</h3>
+                <span class="menu-item__price">€25</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.ent3.desc">Tuétano de vaca asado a la brasa con steak tartar artesano y pan de payés tostado.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.ent4.name">Carrillera de Ternera Estofada</h3>
+                <span class="menu-item__price">€25</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.ent4.desc">Carrillera cocinada a baja temperatura durante 12 horas, con jugo de brasa y parmentier.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.ent5.name">Provolone con Tomates Secos</h3>
+                <span class="menu-item__price">€14</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.ent5.desc">Provolone fundido a la plancha con tomates secos, orégano y aceite de albahaca.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PANEL: Ahumados -->
+        <div id="panel-smoked" role="tabpanel" aria-labelledby="tab-smoked" class="menu__panel--hidden">
+          <div class="menu__grid stagger-group">
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.smk1.name">Costillas de Cerdo (350g)</h3>
+                <span class="menu-item__price">€35</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.smk1.desc">Ahumadas lentamente 6 horas con madera de encina. Jugosas y tiernas.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.smk2.name">Costillas Angus (700g)</h3>
+                <span class="menu-item__price">€48</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.smk2.desc">Costillas premium Angus, 8 horas al humo, glaseadas con salsa BBQ de la casa.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.smk3.name">Ternera Desmechada (200g)</h3>
+                <span class="menu-item__price">€24</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.smk3.desc">Ternera ahumada y desmechada a mano, servida con pan de payés tostado.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.smk4.name">Cerdo Desmechado (400g)</h3>
+                <span class="menu-item__price">€18</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.smk4.desc">Paleta de cerdo ahumada lentamente, suculenta y tierna.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.smk5.name">Combo Especial &ldquo;El Born&rdquo;</h3>
+                <span class="menu-item__price">€100</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.smk5.desc">Costillas de cerdo, cerdo desmechado y ternera. 1kg para 2 personas.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.smk6.name">Combo Premium &ldquo;La Ciutat Vella&rdquo;</h3>
+                <span class="menu-item__price">€140</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.smk6.desc">Selección premium con costillas Angus, ternera desmechada y más. Para 2&ndash;3 personas.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PANEL: A la Brasa -->
+        <div id="panel-brasa" role="tabpanel" aria-labelledby="tab-brasa" class="menu__panel--hidden">
+          <div class="menu__grid stagger-group">
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.brs1.name">Costilla de Ternera (350g)</h3>
+                <span class="menu-item__price">€26</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.brs1.desc">Costilla de ternera a la brasa, punto jugoso y sabor intenso.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.brs2.name">Falda de Ternera (350g)</h3>
+                <span class="menu-item__price">€26</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.brs2.desc">Corte sabroso, marinado y asado a fuego vivo sobre la brasa.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.brs3.name">Vacío (350g)</h3>
+                <span class="menu-item__price">€26</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.brs3.desc">El corte argentino por excelencia: tierno, sabroso y con carácter.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.brs4.name">Tri-Tip (350g)</h3>
+                <span class="menu-item__price">€35</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.brs4.desc">Corte americano de lomo bajo, jugoso y muy sabroso a la brasa.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.brs5.name">Solomillo (350g)</h3>
+                <span class="menu-item__price">€38</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.brs5.desc">El corte más tierno de la ternera. Perfección a la brasa.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.brs6.name">Entrecot (350g)</h3>
+                <span class="menu-item__price">€38</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.brs6.desc">Veteado perfecto para una experiencia intensa y rica en boca.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PANEL: Arroces -->
+        <div id="panel-arroces" role="tabpanel" aria-labelledby="tab-arroces" class="menu__panel--hidden">
+          <div class="menu__grid stagger-group">
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.arr1.name">Paella de Solomillo</h3>
+                <span class="menu-item__price">€60</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.arr1.desc">Arroz meloso con solomillo de ternera braseado. Para 2 personas.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.arr2.name">Paella de Pollo Asado</h3>
+                <span class="menu-item__price">1p €29 / 2p €54 / 3p €81</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.arr2.desc">Arroz con pollo asado a la brasa y caldo de primera.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.arr3.name">Paella de Paletilla de Cerdo Ibérico</h3>
+                <span class="menu-item__price">1p €31 / 2p €56 / 3p €84</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.arr3.desc">Arroz con paletilla ibérica ahumada y matices de brasa.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PANEL: Acompañantes -->
+        <div id="panel-acomp" role="tabpanel" aria-labelledby="tab-acomp" class="menu__panel--hidden">
+          <div class="menu__grid stagger-group">
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.acp1.name">Arroz Blanco</h3>
+                <span class="menu-item__price">€6</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.acp1.desc">Para acompañar todos nuestros platos.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.acp2.name">Patatas Fritas</h3>
+                <span class="menu-item__price">€6</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.acp2.desc">Caseras, crujientes y doradas.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.acp3.name">Verduras a la Brasa</h3>
+                <span class="menu-item__price">€6</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.acp3.desc">Selección de verduras de temporada a la brasa.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.acp4.name">Pan de Payés</h3>
+                <span class="menu-item__price">€6</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.acp4.desc">Pan artesano con aceite virgen y tomate de temporada.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PANEL: Postres -->
+        <div id="panel-postres" role="tabpanel" aria-labelledby="tab-postres" class="menu__panel--hidden">
+          <div class="menu__grid stagger-group">
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.pos1.name">Tarta de Queso Casera</h3>
+                <span class="menu-item__price">€12</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.pos1.desc">Receta de la casa, cremosa, suave y con base crujiente.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.pos2.name">Coulant con Helado</h3>
+                <span class="menu-item__price">€12</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.pos2.desc">Coulant de chocolate negro con interior fundente y helado de vainilla.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.pos3.name">Helado (2 bolas)</h3>
+                <span class="menu-item__price">€9</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.pos3.desc">Selección del día. Pregunta a tu camarero.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.pos4.name">Tarta de Chocolate</h3>
+                <span class="menu-item__price">€12</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.pos4.desc">Intensa y cremosa, con ganache de chocolate negro.</p>
+            </div>
+
+            <div class="menu-item reveal">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name" data-i18n="menu.pos5.name">Red Velvet</h3>
+                <span class="menu-item__price">€13</span>
+              </div>
+              <p class="menu-item__desc" data-i18n="menu.pos5.desc">Con frosting de queso crema y cobertura de cacao.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         GALLERY
+         ════════════════════════════════════════════════════ -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal" data-i18n="gallery.label">La Experiencia</span>
+          <h2 class="reveal--heading" data-i18n="gallery.heading">Déjate llevar por el sabor</h2>
+        </div>
+
+        <div class="gallery__grid stagger-group">
+
+          <div class="gallery__item reveal">
+            <img
+              src="images/food4.webp"
+              alt="Brasa encendida en T-Born Brasa"
+              data-i18n-aria="gallery.img1.alt"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+          </div>
+
+          <div class="gallery__item reveal">
+            <img
+              src="images/food5.webp"
+              alt="Plato de costillas ahumadas de T-Born Brasa"
+              data-i18n-aria="gallery.img2.alt"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+          </div>
+
+          <div class="gallery__item reveal">
+            <img
+              src="images/food6.webp"
+              alt="Interior del restaurante T-Born Brasa en El Born"
+              data-i18n-aria="gallery.img3.alt"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async">
+          </div>
+
+        </div>
+
+        <div class="gallery__instagram reveal">
+          <a
+            href="https://www.instagram.com/tbornbrasa/"
+            class="gallery__handle"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visitar @tbornbrasa en Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @tbornbrasa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         FIND US
+         ════════════════════════════════════════════════════ -->
+    <section id="find-us" class="section section--alt">
+      <div class="container">
+
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+          <span class="section-label reveal" data-i18n="findus.label">Encuéntranos</span>
+          <h2 class="reveal--heading" data-i18n="findus.heading">Visítanos en El Born</h2>
+        </div>
+
+        <div class="findus__grid">
+
+          <!-- Left: WhatsApp card + info -->
+          <div>
+            <!-- WhatsApp CTA card (primary reservation method) -->
+            <div class="wa-card reveal">
+              <div class="wa-card__icon" aria-hidden="true">💬</div>
+              <h3 class="wa-card__heading" data-i18n="findus.wa.heading">Reserva por WhatsApp</h3>
+              <p class="wa-card__desc" data-i18n="findus.wa.desc">La forma más rápida de asegurar tu mesa. Te respondemos en minutos.</p>
+              <a
+                href="https://wa.me/34935577591?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20T-Born%20Brasa."
+                class="btn btn--wa whatsapp-link"
+                data-phone="+34935577591"
+                target="_blank"
+                rel="noopener"
+                title="Reserva por WhatsApp"
+                data-i18n-title="whatsapp.tooltip">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span data-i18n="findus.wa.cta">Escribirnos en WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Info blocks -->
+            <div class="findus__info">
+
+              <div class="findus__info-block reveal">
+                <h3 data-i18n="findus.hours.heading">Horario</h3>
+                <dl class="findus__hours">
+                  <dt data-i18n="findus.hours.tuesun">Mar &ndash; Dom</dt>
+                  <dd>
+                    <span data-i18n="findus.hours.lunch">13:00 &ndash; 16:00</span> /
+                    <span data-i18n="findus.hours.dinner">20:00 &ndash; 01:00</span>
+                  </dd>
+                  <dt class="hours-closed" data-i18n="findus.hours.closed">Lunes: Cerrado</dt>
+                  <dd class="hours-closed">&mdash;</dd>
+                </dl>
+              </div>
+
+              <div class="findus__info-block reveal">
+                <h3 data-i18n="findus.address.heading">Dirección</h3>
+                <address class="findus__address">
+                  Carrer del Comerç, 24<br>
+                  08003 Barcelona
+                </address>
+              </div>
+
+              <div class="findus__info-block reveal">
+                <h3 data-i18n="findus.phone.heading">Teléfono</h3>
+                <p class="findus__phone">
+                  <a href="tel:+34935577591" aria-label="Llamar a T-Born Brasa">+34 935 577 591</a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Map -->
+          <div class="findus__map reveal--scale">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1!2d2.1813!3d41.3840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f7c4b0b0b0%3A0x0!2sCarrer+del+Comer%C3%A7%2C+24%2C+Barcelona!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de ubicación de T-Born Brasa"
+              data-i18n-aria="findus.map.aria"
+              aria-label="Mapa de ubicación de T-Born Brasa en Google Maps, Carrer del Comerç 24, Barcelona">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <!-- Logo -->
+        <a href="/" class="footer__logo" aria-label="T-Born Brasa — inicio">
+          <img src="images/Logo.webp" alt="T-Born Brasa" width="100" height="44" loading="lazy" decoding="async">
+        </a>
+
+        <!-- Nav links -->
+        <nav class="footer__nav" aria-label="Navegación del pie de página">
+          <a href="#about"   data-i18n="nav.about">Nosotros</a>
+          <a href="#menu"    data-i18n="nav.menu">Carta</a>
+          <a href="#gallery" data-i18n="nav.gallery">Galería</a>
+          <a href="#find-us" data-i18n="nav.findus">Encuéntranos</a>
+          <a href="privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="https://www.instagram.com/tbornbrasa/" target="_blank" rel="noopener" data-i18n="footer.instagram">Instagram</a>
+        </nav>
+
+        <!-- Right: lang switcher + copyright -->
+        <div class="footer__right">
+          <div class="nav__lang" role="group" aria-label="Seleccionar idioma">
+            <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
+            <button class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 T-Born Brasa. Todos los derechos reservados.</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── COOKIE CONSENT BANNER ──────────────────────────── -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden>
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__text">
+          <p id="cookie-title"><strong data-i18n="cookie.title">Aviso de cookies</strong></p>
+          <p data-i18n="cookie.desc">Usamos cookies de análisis para mejorar tu experiencia. Requerido por el RGPD.</p>
+          <p><a href="privacy.html" data-i18n="footer.privacy">Política de Privacidad</a></p>
+        </div>
+        <div class="cookie-banner__actions">
+          <button id="cookie-necessary" class="btn btn--outline btn--sm" data-i18n="cookie.necessary">Solo necesarias</button>
+          <button id="cookie-accept"    class="btn btn--primary btn--sm"  data-i18n="cookie.accept">Aceptar todo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHATSAPP FLOATING BUTTON ───────────────────────── -->
+  <a
+    id="whatsapp-btn"
+    href="https://wa.me/34935577591?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20T-Born%20Brasa."
+    class="whatsapp-btn whatsapp-link"
+    data-phone="+34935577591"
+    target="_blank"
+    rel="noopener"
+    title="Reserva por WhatsApp"
+    data-i18n-title="whatsapp.tooltip"
+    aria-label="Reserva por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ── BACK TO TOP ─────────────────────────────────────── -->
+  <button
+    id="back-to-top"
+    class="back-to-top"
+    data-i18n-aria="backtotop.aria"
+    aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────── -->
+  <script src="js/lenis.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

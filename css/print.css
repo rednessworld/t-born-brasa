@@ -1,0 +1,60 @@
+/* ============================================================
+   PRINT STYLESHEET — T-Born Brasa
+   Shows the full menu when printing. Ctrl/Cmd+P from any page.
+   ============================================================ */
+
+@media print {
+  @page { margin: 1.5cm; }
+
+  /* Hide non-menu elements */
+  .loader, #nav, .nav__mobile, .skip-nav,
+  #hero, #about, #selections, #reviews, #gallery, #find-us,
+  .footer, .cookie-banner,
+  .whatsapp-btn, .back-to-top,
+  .menu__tabs, .section-label,
+  .nav__lang { display: none !important; }
+
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Reveal all panels */
+  .menu__panel--hidden { display: block !important; }
+
+  #menu { padding: 0; background: none; }
+
+  #menu::before {
+    content: 'T-Born Brasa — Carta';
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16pt;
+    padding-bottom: 8pt;
+    border-bottom: 1pt solid #ccc;
+  }
+
+  .menu__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt 16pt;
+  }
+
+  .menu-item {
+    border: none;
+    padding: 6pt 0;
+    border-bottom: 0.5pt solid #e5e5e5;
+    break-inside: avoid;
+    background: none;
+  }
+
+  .menu-item__header { margin-bottom: 2pt; }
+  .menu-item__name   { font-size: 11pt; font-family: Georgia, serif; }
+  .menu-item__price  { color: #000; font-weight: bold; }
+  .menu-item__desc   { font-size: 9pt; color: #555; }
+
+  a { text-decoration: none; color: #000; }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "T-Born Brasa",
+  "short_name": "T-Born",
+  "description": "Brasa y ahumado lento en El Born, Barcelona",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0b09",
+  "theme_color": "#0d0b09",
+  "icons": []
+}
