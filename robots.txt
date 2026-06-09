@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /design/
 
-Sitemap: https://tborn-brasa.vercel.app/sitemap.xml
+Sitemap: https://t-born-brasa.vercel.app/sitemap.xml
