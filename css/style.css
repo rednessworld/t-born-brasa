@@ -761,6 +761,16 @@ section[id],
   padding-bottom: clamp(3rem, 8vh, 6rem);
 }
 
+@media (max-width: 767px) {
+  #hero {
+    align-items: flex-start;
+  }
+  .hero__content {
+    padding-top: clamp(5rem, 28svh, 10rem);
+    padding-bottom: 0;
+  }
+}
+
 .hero__inner {
   max-width: 600px;
   text-align: center;
