@@ -862,6 +862,26 @@ section[id],
   will-change: transform;
 }
 
+.about__image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.about__image-stack picture {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.about__stack-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .about__text { }
 
 .about__text h2 { margin-bottom: var(--space-5); }

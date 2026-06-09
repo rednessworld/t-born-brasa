@@ -226,16 +226,22 @@
 
           <!-- Image (right on desktop, top on mobile) -->
           <div class="about__image-wrap reveal--scale">
-            <img
-              id="about-parallax-img"
-              class="about__image"
-              src="images/food1.webp"
-              alt="Plato de brasa de T-Born Brasa"
-              data-i18n-aria="about.img.alt"
-              width="800"
-              height="600"
-              loading="lazy"
-              decoding="async">
+            <div class="about__image-stack">
+              <picture>
+                <source srcset="images/food5.webp" type="image/webp">
+                <img class="about__stack-img" src="images/food5.webp"
+                     alt="Brasa de leña en T-Born Brasa"
+                     width="800" height="600"
+                     loading="lazy" decoding="async">
+              </picture>
+              <picture>
+                <source srcset="images/food9.webp" type="image/webp">
+                <img class="about__stack-img" src="images/food9.webp"
+                     alt="Costillas ahumadas de T-Born Brasa"
+                     width="800" height="600"
+                     loading="lazy" decoding="async">
+              </picture>
+            </div>
           </div>
 
           <!-- Text (left on desktop) -->
