@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OBSIDIAN STEAKHOUSE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#998f83",
+                        "on-primary-fixed-variant": "#584323",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed": "#d5e3ff",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-fixed": "#281800",
+                        "brushed-gold": "#C5A880",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#513d1d",
+                        "on-secondary": "#313030",
+                        "primary": "#e2c399",
+                        "tertiary": "#bac8e3",
+                        "tertiary-fixed-dim": "#b9c7e2",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#334157",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary-container": "#9fadc7",
+                        "on-tertiary-fixed-variant": "#3a475d",
+                        "outline-variant": "#4d463c",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed": "#fedeb2",
+                        "charcoal-surface": "#1A1A1A",
+                        "on-surface-variant": "#d1c5b8",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed": "#0d1c30",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#e0c298",
+                        "surface": "#131313",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#c5a880",
+                        "secondary-fixed": "#e5e2e1",
+                        "ivory-text": "#F5F5F5",
+                        "surface-container-highest": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "deep-obsidian": "#0B0B0B",
+                        "inverse-primary": "#725b38",
+                        "on-tertiary": "#233146",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-container": "#474746",
+                        "primary-fixed-dim": "#e0c298",
+                        "on-primary": "#402d0f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-mobile": "20px",
+                        "section-padding": "120px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "margin-tablet": "40px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-deep-obsidian text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-md border-b border-outline-variant/30 flat no shadows">
+<div class="flex justify-between items-center px-margin-desktop h-20 max-w-[1200px] mx-auto">
+<div class="font-display-lg text-headline-md tracking-tighter text-on-surface">OBSIDIAN STEAKHOUSE</div>
+<div class="hidden md:flex gap-gutter">
+<a class="font-label-md text-label-md uppercase text-brushed-gold font-bold border-b border-brushed-gold pb-1 hover:text-brushed-gold hover:opacity-80 scale-95 transition-transform duration-200" href="#">About</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-brushed-gold transition-colors duration-300 hover:opacity-80" href="#">Menu</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-brushed-gold transition-colors duration-300 hover:opacity-80" href="#">Gallery</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-brushed-gold transition-colors duration-300 hover:opacity-80" href="#">Find Us</a>
+</div>
+<button class="bg-brushed-gold text-deep-obsidian font-label-md text-label-md uppercase px-6 py-3 rounded-none hover:bg-surface-tint transition-colors duration-300">Book a Table</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<img alt="" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3F0ba88DKcgmTJa7gIw058ryu2Jj_yqFkLwUIE8BrkjDS2Qs3wIbDleF5oO23m0j3xMBIK3e5_5yp5OwGWeSPT94gEQGl4kiUegOJYjaBwsUS7EFer8y95VSiz_gwNbbdJspA6mBmXSbHy68NmibFUrnAOjSV6GKcCN6DnacflFFw9-WQJ1_gDyVFOYPxvQLsjZCGfAl8a4EC0hrG_sAP_oHqZrpTZhfm-caxu1MD-TNgAbjgB2KYHL7QvgoBxbTmje2NiC8wBqg"/>
+<div class="absolute inset-0 bg-deep-obsidian/70"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 text-center max-w-[800px] px-margin-mobile md:px-0">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-ivory-text mb-stack-md leading-tight">An Unforgettable Feast for the Senses</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-[600px] mx-auto">Where primal fire meets refined culinary artistry in a cinematic dining experience.</p>
+<button class="bg-brushed-gold text-deep-obsidian font-label-md text-label-md uppercase px-8 py-4 rounded-none hover:bg-surface-tint transition-all duration-300 tracking-widest border border-brushed-gold hover:border-surface-tint">Reserve Your Place</button>
+</div>
+</header>
+<!-- About Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-deep-obsidian">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-padding items-center">
+<div class="order-2 md:order-1 relative">
+<div class="absolute -inset-4 border border-brushed-gold/20 z-0 translate-x-4 translate-y-4"></div>
+<img alt="" class="relative z-10 w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTQTAeAUdyf0hXoHB-9LJ7CwhiefL7FyXCx77QjhTn8G77dHAMKMFZxQWgULzMDg4tF-ATF_jteGBOFFrGF3DtH9gSDe4v4TH6bX7H6kvzZWGOalIbcrdKchmhhbEHUTz-JDYMR65fkcmVCIon0agYRGZu0lEpTXR2OTm5NWHh8iclDiEWDFMAQYQn5rA8vBaIUXqUddoqnLB5PBZBOnjCcjO4iqaoVN1QH5djbUNyEatKtkgSpXS2AEB-3O6kw7cIWXgsnx6Jang"/>
+</div>
+<div class="order-1 md:order-2 flex flex-col justify-center">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-ivory-text mb-stack-lg relative pb-stack-md">
+                    The Art of the Cut
+                    <span class="absolute bottom-0 left-0 w-16 h-[2px] bg-brushed-gold"></span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md leading-relaxed">
+                    At Obsidian, we believe that exceptional dining is theater. Every detail, from the dimly lit atmosphere to the precise orchestration of service, is designed to elevate the pure, unadulterated flavor of the world's finest cuts.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg leading-relaxed opacity-80">
+                    Sourced from exclusive ranches and aged to perfection in our custom Himalayan salt chambers, our steaks are an expression of dedication to the craft. Step into the shadows and let the spotlight fall on the flame.
+                </p>
+<div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-brushed-gold hover:text-surface-tint transition-colors group" href="#">
+                        Discover Our Story
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Menu Highlights -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-section-padding">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-ivory-text mb-stack-md">Signature Selections</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[600px] mx-auto">Curated highlights from our extensive collection of prime cuts and rare reserves.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Menu Item 1 -->
+<div class="bg-charcoal-surface border border-outline-variant/20 p-stack-lg hover:border-brushed-gold/50 transition-colors duration-500 group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="font-label-sm text-label-sm text-brushed-gold uppercase border border-brushed-gold px-2 py-1">Prime</span>
+</div>
+<div class="w-full h-64 mb-stack-lg bg-surface-container-high overflow-hidden">
+<img alt="Tomahawk Steak" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A close-up of a massive, perfectly grilled Tomahawk steak resting on a rustic wooden cutting board. The meat has a rich, dark crust with visible grill marks, while the bone extends dramatically off the board. Soft, moody directional lighting highlights the glistening juices and coarse sea salt sprinkled on top. The background is a deeply blurred, dimly lit luxury restaurant setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfXkca3hFJQvt3bedzCUXOv2D2txHxJr__5x0O-4hGKLSuHW2_hJGeqSOM8qPqrDdmyjPygHXVKgz2FlAjtIwiTEluUFRVw7DeIJ5OBU8YTXpTBYj7Jl-Fnd9iKG1VpKBJW9CVcp4QlVIdrRANykPf5Nwuo8ZBcVfZxGdK_tXeA-yajhh1z-zIOY3wiiRYDSAmR1dx4i1oENqLolOvq_xkfw9vx_LEzVc0fj5lNCC6TLVKCPE7qmUSa-NzT-NwDxr4RdwMVcMjeFA"/>
+</div>
+<div class="flex justify-between items-start mb-stack-sm border-b border-outline-variant/30 pb-stack-sm">
+<h3 class="font-headline-md text-headline-md text-ivory-text">The Obsidian Tomahawk</h3>
+<span class="font-label-md text-label-md text-brushed-gold">$185</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">40oz dry-aged for 45 days, smoked table-side with cherrywood.</p>
+</div>
+<!-- Menu Item 2 -->
+<div class="bg-charcoal-surface border border-outline-variant/20 p-stack-lg hover:border-brushed-gold/50 transition-colors duration-500 group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="font-label-sm text-label-sm text-brushed-gold uppercase border border-brushed-gold px-2 py-1">A5 Grade</span>
+</div>
+<div class="w-full h-64 mb-stack-lg bg-surface-container-high overflow-hidden">
+<img alt="Wagyu Striploin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="Thin, precise slices of highly marbled Wagyu striploin laid out elegantly on a dark slate plate. The intricate web of white fat against the deep red meat is visually striking under focused, high-contrast spotlighting. A small, minimalist garnish of microgreens sits to the side. The overall aesthetic is clean, ultra-premium, and modern dark-mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrwbM-OlDsiNBvirboZ_-eSD1L5EJUgQbxsv6TAs4ti-Nc4uDfHNfa9dg7FIvu2xBpeNL0KLwpoMUE9CuZ6On3Ltza0CpiEkSnuVQImcEehfk8YS0nUMQYWcWmpuIq_44mr3WhqXr3XWpohTuWzrKLQc3k-zcMuhTAVdw1FtbzQXCIhI-3V_L_tsCZpryNOnxxi7i7WWTgOb7vhH0Orr0vvHZybAsRpxLu9TlzSkAhrC-nwjt-JCFFQmwO5JOKNkC9J31ekng_Mk0"/>
+</div>
+<div class="flex justify-between items-start mb-stack-sm border-b border-outline-variant/30 pb-stack-sm">
+<h3 class="font-headline-md text-headline-md text-ivory-text">Wagyu Striploin</h3>
+<span class="font-label-md text-label-md text-brushed-gold">$220</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Japanese A5, intensely marbled, seared briefly over binchotan charcoal.</p>
+</div>
+<!-- Menu Item 3 -->
+<div class="bg-charcoal-surface border border-outline-variant/20 p-stack-lg hover:border-brushed-gold/50 transition-colors duration-500 group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="font-label-sm text-label-sm text-brushed-gold uppercase border border-brushed-gold px-2 py-1">Signature</span>
+</div>
+<div class="w-full h-64 mb-stack-lg bg-surface-container-high overflow-hidden">
+<img alt="Gold-Wrapped Filet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A thick, perfectly round filet mignon wrapped entirely in edible 24k gold leaf, presented on an elegant black ceramic plate. The gold reflects warm, dramatic accent lighting, creating a scene of ultimate luxury and theatrical dining. A swirl of dark, rich demi-glace surrounds the base of the steak in a minimalist, precise plating style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATMeSNY9nqDneoj0Agm59tD9ZiVjegSCcQrgdmhjc2vWSqZ_AWIcMT_YkG1NnyeVaxNOBCrfg601qzRnr2YnIUvfjWkjf4dG_G0ACI8y1Ebc7zimyh92kYglYBQTTWAVRUxi0noLMHOiZiAADkiNefLIBxDtkR7nhywDFP11iNaH_cfJJzE30UTJKxBvgOTTuiEGtA-0D9PQPUSbNkCBbnAvyoZrKjjw5kQqIorvkiaHBOUc4AeFY8V_yFgADxIOki_ZAS6p5qhEo"/>
+</div>
+<div class="flex justify-between items-start mb-stack-sm border-b border-outline-variant/30 pb-stack-sm">
+<h3 class="font-headline-md text-headline-md text-ivory-text">Gold-Wrapped Filet</h3>
+<span class="font-label-md text-label-md text-brushed-gold">$150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">8oz center cut, draped in 24k gold leaf, served with bone marrow demi-glace.</p>
+</div>
+</div>
+<div class="text-center mt-stack-lg">
+<button class="bg-transparent border border-brushed-gold text-ivory-text font-label-md text-label-md uppercase px-8 py-3 rounded-none hover:bg-brushed-gold/10 transition-colors duration-300 tracking-widest">View Full Menu</button>
+</div>
+</div>
+</section>
+<!-- Gallery Grid -->
+<section class="py-section-padding bg-deep-obsidian overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg text-center">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-ivory-text mb-stack-sm">The Experience</h2>
+<p class="font-body-md text-body-md text-brushed-gold uppercase tracking-widest">@ObsidianSteak</p>
+</div>
+<div class="flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-2 px-2 pb-8">
+<div class="min-w-[300px] md:min-w-[400px] h-[400px] md:h-[500px] snap-center shrink-0 group relative overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-deep-obsidian/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Cocktail pouring" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A mixologist pouring a vibrant amber cocktail from a shaker into a crystal coupe glass at a dimly lit, high-end dark wood bar. Smoke cascades down the side of the glass. The background is a blur of glowing bottles and sophisticated ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDbN9BwDRlsxaOJ8SsaTR4c5H4QKkpx0vs0by2b_cx-Qmg-QWQViJA2rFNzGEj0ZY8t891OzJcVi26Osnq9TXEizbvDRMxYoqP4Qr1nclObl6q1YjNyIX0KqTiq28XRU-8BC3nmP6Yw2YIfrOWaztjvuTgZ-KQw1sz1T3AVrt6yEsf9n94GPXlmK4BYgc3DrKugqBpQ_ybSyE__Qvws_IIPfXKthU3OTEDzkvyjBUpHx8ryHkm2-NsDepptL0N3BvUWZi9k6SLHl8"/>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] h-[400px] md:h-[500px] snap-center shrink-0 group relative overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-deep-obsidian/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Grill flames" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A dramatic shot of flames leaping up from a charcoal grill in a dark, professional kitchen. Silhouette of a chef's hands using long tongs to flip a large cut of meat over the intense fire. The lighting highlights the flying sparks and smoke." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQGcOzsxSiTEthnFnEP5D2aM-sK_4HbDnN8lR-waIX_MezC-b-5q8gTRZb93EjqvajWGqxMvEEnjOdr8sojZXCvE_kxNeIHEkWIWnuH0mvpgUkVyyvvANAcRoC3mZHaEQuRb2yIWr04S2-11VMZvZwf1Zfjhe2xxGHQDu6HolpCzzCxdNH6ZAgLXkzd0I2VqJWlu8R2OZ2hZaB5OwOY5BKiQbcsdwcaiFEYPzobpZ-cWNu956EXpRpT0SuHwCrXz3pFc7VYmrQNJU"/>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] h-[400px] md:h-[500px] snap-center shrink-0 group relative overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-deep-obsidian/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Table setting" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="An elegant dining table set for two in a luxurious, moody steakhouse. Crisp white linens contrast with dark charcoal plates, gleaming gold cutlery, and crystal wine glasses half-full of red wine. A single candle provides a warm, intimate glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDza-undfN08JmXpxtFgW_R0vUyhEOoFMknBUqP739pBga0SrYqtsACTAfthEMXo6kG43dQYS9upWlCiZW2NsmOYuKKretE2ev5nzmTTIzoixingIZu7VnwB93KJkj4FgmsYvPztc9COt03T7bfkUERYDM6RY81d4CbzWt0zKkDZwflEszEhBoH-oeouYQ7ooeKc8L-vVtMhVbt7VmJY2li5inH74jgbO_km8_nBsQYUrCzqRGHhqtUsDkgc2WaiVOLMzD7lZLcxl4"/>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] h-[400px] md:h-[500px] snap-center shrink-0 group relative overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-deep-obsidian/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Plating details" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A close up of a chef's hands precisely arranging delicate microgreens on top of an artfully plated dish on a black slate. The background is pure dark mode aesthetic, emphasizing the vibrant colors of the food and the intense focus of the plating process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmha89ebthAC9EkBErO5KltyMKxKxizyWkpbqL4X_BlMuY_oyFMIx382Ln2A1Y0sK0LMxBHHNnjUk6cNxwQbX5ECE_-w_xAkjGp7KtOvzYGL6BfNeuvIxitTbRUigqMu8inBXPqDsnUA9Qrss8FfynoFzHLUEIhhT1UHIkQ89FeZWLB-dxnsitu1hu_HnCAjOJqYZvE1XMP_iSC5sLuVUWobp_z-lXuNl6d6E_nfsUYbI5fibb7iymKEcmWvF5cuXR0wJByxQ83CI"/>
+</div>
+</div>
+</section>
+<!-- Find Us & Contact Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface relative">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brushed-gold/30 to-transparent"></div>
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-padding">
+<div class="flex flex-col justify-center">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-ivory-text mb-stack-lg">Join the Cult of the Cut</h2>
+<div class="space-y-stack-md mb-stack-lg">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brushed-gold mt-1">location_on</span>
+<div>
+<h4 class="font-label-md text-label-md uppercase text-on-surface mb-1">Location</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">123 Obsidian Way<br/>Metropolis, NY 10001</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brushed-gold mt-1">schedule</span>
+<div>
+<h4 class="font-label-md text-label-md uppercase text-on-surface mb-1">Hours of Operation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Tuesday - Sunday<br/>5:00 PM - 11:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-brushed-gold mt-1">call</span>
+<div>
+<h4 class="font-label-md text-label-md uppercase text-on-surface mb-1">Reservations &amp; Inquiries</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">+1 (555) 019-2837<br/>concierge@obsidiansteak.com</p>
+</div>
+</div>
+</div>
+<div class="pt-stack-md border-t border-outline-variant/20">
+<h4 class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-stack-sm tracking-widest">Dress Code</h4>
+<p class="font-body-md text-body-md text-on-surface-variant italic opacity-80">Business Casual / Elegant. No athletic wear.</p>
+</div>
+</div>
+<div class="bg-charcoal-surface border border-outline-variant/20 h-[400px] md:h-auto relative overflow-hidden flex items-center justify-center group">
+<div class="absolute inset-0 bg-deep-obsidian/20 z-10 pointer-events-none"></div>
+<img alt="Map Location" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" data-alt="A stylized, highly abstract, dark-mode map illustration. The map features deep black tones with subtle charcoal roads. A single glowing brushed-gold marker pinpoints a location in the center, emitting a soft radial glow. The overall design is minimalist, technological, and luxurious." data-location="New York" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpPs1GbYfUAhbyi4VZTkUWFcSbNYkpBzFLEDuWrcLTyz--j8HSLoi7DQhF9x62pNGXQZ3KEwndQMMo_VkMM_vqJxXEiwJ6EkM3KdtXQDTfFdK3XorUudKI7x95zZqYE3oSwzpiU5GANN8Dt8KovJXWCXTBDguAHkKb9ikg8haVVWnU4-7cZcZrPz1BdBq2GIkUUzTYSH9HWQ6mFHFlsawA2HutZrFouUbI0OeOLaNeYkjece-FW40gUwbThG4bf0UQ0KiYb7oPPAs"/>
+<div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+<div class="w-16 h-16 rounded-full border-2 border-brushed-gold flex items-center justify-center bg-deep-obsidian/80 backdrop-blur-sm shadow-[0_0_30px_rgba(197,168,128,0.3)]">
+<span class="material-symbols-outlined text-brushed-gold text-3xl">restaurant</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-deep-obsidian border-t border-outline-variant/20 flat no shadows text-brushed-gold font-body-md text-body-md grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-[1200px] mx-auto opacity-0 animate-[fadeIn_1s_ease-out_forwards] [animation-timeline:view()] [animation-range:entry_10%_cover_30%]">
+<div class="font-display-lg text-headline-md text-on-surface mb-4 md:mb-0">
+            OBSIDIAN STEAKHOUSE
+        </div>
+<div class="flex flex-wrap gap-4 md:justify-center">
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-brushed-gold transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-brushed-gold transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-brushed-gold transition-all duration-300" href="#">Careers</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-brushed-gold transition-all duration-300" href="#">Press Kit</a>
+</div>
+<div class="text-on-surface-variant md:text-right mt-4 md:mt-0 font-label-sm text-label-sm uppercase">
+            © 2024 OBSIDIAN STEAKHOUSE. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body></html>

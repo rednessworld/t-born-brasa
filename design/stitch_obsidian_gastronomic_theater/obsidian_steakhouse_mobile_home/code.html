@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'OBSIDIENNE STEAKHOUSE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#513d1d",
+                        "charcoal-surface": "#1A1A1A",
+                        "outline-variant": "#4d463c",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-container": "#c5a880",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#fedeb2",
+                        "primary-fixed-dim": "#e0c298",
+                        "outline": "#998f83",
+                        "on-primary-fixed-variant": "#584323",
+                        "tertiary-fixed-dim": "#b9c7e2",
+                        "surface": "#131313",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-bright": "#3a3939",
+                        "secondary-container": "#474746",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#334157",
+                        "on-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#233146",
+                        "brushed-gold": "#C5A880",
+                        "on-secondary": "#313030",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-primary-fixed": "#281800",
+                        "deep-obsidian": "#0B0B0B",
+                        "on-tertiary-fixed": "#0d1c30",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary": "#e2c399",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "on-primary": "#402d0f",
+                        "inverse-primary": "#725b38",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#3a475d",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#9fadc7",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#c8c6c5",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#d1c5b8",
+                        "tertiary": "#bac8e3",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "ivory-text": "#F5F5F5",
+                        "surface-tint": "#e0c298"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "80px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "section-padding": "120px",
+                        "margin-tablet": "40px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-lg": ["40px", { lineHeight: "48px", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "38px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0B0B0B; color: #e5e2e1; }
+        .glass-panel { background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .gold-outline { border: 1px solid #C5A880; }
+        .charcoal-outline { border: 1px solid #353534; }
+        
+        /* Drawer Animations */
+        #nav-drawer { transform: translateX(-100%); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        #nav-drawer.open { transform: translateX(0); }
+        #drawer-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        #drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/60 dark:bg-background/60 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-20">
+<button class="text-brushed-gold dark:text-brushed-gold hover:text-brushed-gold transition-colors duration-300 opacity-80 scale-95 transition-all p-2 -ml-2 focus:outline-none" id="menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-brushed-gold dark:text-brushed-gold">L'OBSIDIENNE</h1>
+<button class="font-label-md text-label-md text-brushed-gold dark:text-brushed-gold hover:text-brushed-gold transition-colors duration-300 uppercase tracking-widest focus:outline-none">RESERVE</button>
+</header>
+<!-- NavigationDrawer Overlay -->
+<div class="fixed inset-0 bg-black/80 z-40 backdrop-blur-sm" id="drawer-overlay"></div>
+<!-- NavigationDrawer -->
+<aside class="fixed top-0 left-0 h-full w-4/5 bg-charcoal-surface dark:bg-charcoal-surface shadow-2xl z-50 flex flex-col pt-section-padding px-6" id="nav-drawer">
+<div class="mb-stack-lg flex justify-between items-center">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-brushed-gold">L'OBSIDIENNE</h2>
+<button class="text-brushed-gold p-2 focus:outline-none" id="close-drawer-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-stack-md flex-grow">
+<a class="font-label-md text-label-md uppercase tracking-widest text-brushed-gold bg-surface-container-high px-4 py-3 border-l-2 border-brushed-gold flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+                The Menu
+            </a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-ivory-text/60 px-4 py-3 hover:bg-surface-variant/20 hover:text-brushed-gold transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+                Private Dining
+            </a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-ivory-text/60 px-4 py-3 hover:bg-surface-variant/20 hover:text-brushed-gold transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">wine_bar</span>
+                The Cellar
+            </a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-ivory-text/60 px-4 py-3 hover:bg-surface-variant/20 hover:text-brushed-gold transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                Location
+            </a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-ivory-text/60 px-4 py-3 hover:bg-surface-variant/20 hover:text-brushed-gold transition-colors flex items-center gap-4 mt-auto mb-stack-lg" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Reservations
+            </a>
+</nav>
+</aside>
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full flex items-center justify-center px-margin-mobile text-center">
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="A cinematic, dimly lit scene of a chef carving a massive, perfectly seared tomahawk steak. Smoke rises dramatically from the hot meat. The setting is an exclusive, high-end steakhouse with deep obsidian black walls, plush velvet seating, and warm, brushed gold lighting accents. The mood is luxurious, intimate, and focused entirely on the culinary craft." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtQvr4dVZA61UKiBnjhUzjQHFA9fHBMRgfmh-cQht0bmP16FxZEAVUv-K5KmUobeKAxPDWouyUC7NF-R1Yqr344bGVqIE9kR2K3dzkeBMLZubiSibL6tdsfRxS95eV90DZE9-LwDF4auXG4PeXMnIhNiQSOkMG45lnoJjgJYXJY_HXVCo4o-Gag5xUSrd-JwUCBUp9kvPO0T-HPtsnjK-7GM-B9RcbJEc2i8sw4ORU-pho-Nhoy7oGHy3I');">
+<div class="absolute inset-0 bg-deep-obsidian/60 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-deep-obsidian/80"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-stack-lg max-w-lg mt-12">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-ivory-text leading-tight drop-shadow-2xl">
+                    An Unforgettable Feast for the Senses
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80 max-w-sm">
+                    Where primal fire meets precise artistry.
+                </p>
+<button class="mt-4 bg-brushed-gold text-deep-obsidian font-label-md text-label-md uppercase tracking-widest px-8 py-4 rounded-none hover:bg-primary-fixed-dim transition-colors shadow-lg shadow-brushed-gold/20">
+                    Reserve a Table
+                </button>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding px-margin-mobile flex flex-col gap-stack-lg bg-deep-obsidian">
+<div class="flex flex-col gap-stack-md">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-brushed-gold">The Art of the Cut</h3>
+<div class="w-12 h-0.5 bg-brushed-gold/50 mb-2"></div>
+<p class="font-body-md text-body-md text-on-surface/80 leading-relaxed">
+                    At L'Obsidienne, we don't just serve steak; we orchestrate an experience. Our master butchers source only the rarest, most heavily marbled cuts, aging them in-house to peak intensity. Every searing flame is calculated, every cut is deliberate.
+                </p>
+</div>
+<div class="relative w-full aspect-square mt-stack-md">
+<img alt="Luxurious dining room interior" class="w-full h-full object-cover rounded-none border border-outline-variant/20 shadow-2xl" data-alt="A luxurious, modern steakhouse dining room at twilight. The walls are clad in polished black marble with subtle gold geometric inlays. Elegant, dimly lit tables are set with fine china and glowing amber table lamps. The atmosphere is sophisticated, cinematic, and exclusive, utilizing a deep charcoal and brushed gold color palette." src="https://lh3.googleusercontent.com/aida/AP1WRLsum0w22n_QJVIp3ryAwFnM__Rdg8daKMqcK6meBsrEaTDyDNUr8nzkmB40BwMfzen2KLtQqZIz16OYTWGzJiBQ9d-CCI4WRFhc2gbKjJNCFQlUO_y-AsmBN33r_CU0l7k6fZlpa_YKPyXGw9eT2CiI-L_ReNyi-hD-pzVB0cY9IjV6wzKf3nELutP8Kx0-NHYnnApOM4J2nkPGi4DF1-eoQ97LZWHZsYU5kjG0BAUYMLhp2Sh1kg2fmg"/>
+</div>
+</section>
+<!-- Signature Highlights -->
+<section class="py-16 px-margin-mobile bg-charcoal-surface">
+<div class="mb-stack-lg flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-brushed-gold uppercase tracking-widest mb-2">Curated Selection</span>
+<h3 class="font-headline-md text-headline-md text-ivory-text">Signature Cuts</h3>
+</div>
+<div class="flex flex-col gap-stack-lg">
+<!-- Dish Card 1 -->
+<article class="flex flex-col gap-stack-sm pb-stack-lg border-b border-outline-variant/30">
+<div class="w-full h-48 bg-surface-variant mb-2 relative overflow-hidden" data-alt="A massive, perfectly grilled Tomahawk ribeye steak resting on a rustic wooden cutting board. The steak has a dark, charred crust and is garnished with coarse sea salt and fresh rosemary. The background is a stark, minimal black void to emphasize the rich, savory textures of the meat. High contrast, cinematic lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA71ZXRk9PYEYrHIZDWPitupFVUEtT40eqvOFQq0egvHVFH-wi2Debepeg3OJtF-4zNdClIA6Xj04wGZJM8oUEZEts6foMqvscRSNE1hwUVl9El8dlUALQvDdra_hBZj0Se6d3m33aAa0LNyvIIf5cj1zIw51uDb82pZcnlk4KCudOI4dBxMIvzdCHctvOWWhBoY0ugHPsowcdGuabymQC43xqzH4SChmkiiIeRqLMys1DKrG5o6xiC3mUIuWjmg6F8LV4N6ss-3FA'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-surface to-transparent"></div>
+</div>
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-md text-headline-md text-ivory-text">The Obsidian Tomahawk</h4>
+<span class="font-label-md text-label-md text-brushed-gold">$185</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/70">45-day dry-aged ribeye, smoked tableside with cherrywood.</p>
+<div class="flex gap-2 mt-2">
+<span class="font-label-sm text-label-sm text-ivory-text border border-ivory-text/30 px-2 py-1 uppercase">Dry-Aged</span>
+<span class="font-label-sm text-label-sm text-ivory-text border border-ivory-text/30 px-2 py-1 uppercase">For Two</span>
+</div>
+</article>
+<!-- Dish Card 2 -->
+<article class="flex flex-col gap-stack-sm pb-stack-lg border-b border-outline-variant/30">
+<div class="w-full h-48 bg-surface-variant mb-2 relative overflow-hidden" data-alt="Thinly sliced, premium A5 Wagyu beef arranged elegantly on a dark slate plate. The meat is incredibly marbled with bright white fat against deep red flesh. Soft, focused directional lighting highlights the glistening texture of the beef. The setting is minimal, dark, and sophisticated, keeping focus entirely on the luxurious ingredient." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAr7aENK6ok1OOjfu6WXuRIwC3ShgU2bMV4BdF4iRRjMypWvpArIehK69ZWKSNc66wsAM9GGoWVpWl4dr9sZNgXQvoM0uEGqFSGhRfGzLPoE6_C7Fu4l5spgO496doLTsahJ7ONVXdXy08t6zIY5Wx-AlSVvq83G5AKKpW9QMUGWnEoiwk2vKGFXHYH4xmYAJp3X7R9Sn3S_vzw_GS2NjvMyCKs_ne75A_0qoiUfHbWuCtp7CKVBCM7T8oNQFgi3zbUkmzJO3sGeHY'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-surface to-transparent"></div>
+</div>
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-md text-headline-md text-ivory-text">A5 Kagoshima Wagyu</h4>
+<span class="font-label-md text-label-md text-brushed-gold">$220</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/70">Unparalleled marbling, seared over binchotan charcoal.</p>
+<div class="flex gap-2 mt-2">
+<span class="font-label-sm text-label-sm text-ivory-text border border-ivory-text/30 px-2 py-1 uppercase">A5 Grade</span>
+</div>
+</article>
+</div>
+<button class="w-full mt-stack-lg border border-brushed-gold text-ivory-text font-label-md text-label-md uppercase tracking-widest px-6 py-4 hover:bg-brushed-gold hover:text-deep-obsidian transition-colors">
+                View Full Menu
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-obsidian dark:bg-deep-obsidian border-t border-outline-variant/20 w-full py-16 px-margin-mobile flex flex-col items-center text-center space-y-stack-lg mt-auto">
+<h2 class="font-headline-md text-headline-md text-brushed-gold tracking-widest">L'OBSIDIENNE</h2>
+<nav class="flex flex-col gap-stack-md">
+<a class="font-body-md text-body-md text-on-surface/60 hover:text-brushed-gold underline transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface/60 hover:text-brushed-gold underline transition-colors" href="#">Terms</a>
+<a class="font-body-md text-body-md text-on-surface/60 hover:text-brushed-gold underline transition-colors" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-surface/60 hover:text-brushed-gold underline transition-colors" href="#">Press</a>
+</nav>
+<p class="font-body-md text-body-md text-on-surface/60 mt-stack-lg text-sm">
+            © 2024 L'OBSIDIENNE STEAKHOUSE. ALL RIGHTS RESERVED.
+        </p>
+</footer>
+<script>
+        // Simple Drawer Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-drawer-btn');
+        const drawer = document.getElementById('nav-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function toggleDrawer() {
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+            document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+        }
+
+        menuBtn.addEventListener('click', toggleDrawer);
+        closeBtn.addEventListener('click', toggleDrawer);
+        overlay.addEventListener('click', toggleDrawer);
+    </script>
+</body></html>

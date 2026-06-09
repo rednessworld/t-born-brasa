@@ -14,13 +14,19 @@ const translations = {
     'skip.nav': 'Ir al contenido',
 
     /* Nav */
-    'nav.about':    'Nosotros',
-    'nav.menu':     'Carta',
-    'nav.gallery':  'Galería',
-    'nav.findus':   'Encuéntranos',
-    'nav.reserve':  'Reservar Mesa',
+    'nav.about':      'Nosotros',
+    'nav.menu':       'Carta',
+    'nav.gallery':    'Galería',
+    'nav.findus':     'Encuéntranos',
+    'nav.reserve':    'Reservar Mesa',
     'nav.aria.open':  'Abrir menú de navegación',
     'nav.aria.close': 'Cerrar menú de navegación',
+    'nav.aria.main':  'Navegación principal',
+    'nav.mobile.aria': 'Menú de navegación móvil',
+    'nav.lang.aria':  'Seleccionar idioma',
+    'footer.nav.aria': 'Navegación del pie de página',
+    'menu.aria.tabs': 'Categorías del menú',
+    'findus.phone.aria': 'Llamar a T-Born Brasa',
 
     /* Loader */
     'loader.text': 'T-Born Brasa',
@@ -58,10 +64,11 @@ const translations = {
     'sel.card3.alt':   'Combo El Born de T-Born Brasa',
 
     /* Reviews */
-    'reviews.label':   'Opiniones',
-    'reviews.heading': 'Lo que dicen nuestros clientes',
-    'reviews.overall': 'en Google &middot; 127 reseñas',
-    'reviews.google':  'Ver todas las reseñas',
+    'reviews.label':      'Opiniones',
+    'reviews.heading':    'Lo que dicen nuestros clientes',
+    'reviews.overall':    'en Google &middot; 382 reseñas',
+    'reviews.google':     'Ver todas las reseñas',
+    'reviews.stars.aria': '4.9 de 5 estrellas',
 
     /* Menu section */
     'menu.label':   'La Carta',
@@ -156,17 +163,20 @@ const translations = {
 
     /* Find Us */
     'findus.label':      'Encuéntranos',
-    'findus.heading':    'Visítanos en El Born',
+    'findus.heading':    'Te Esperamos en El Born',
     'findus.sub':        'En el corazón del Born, Barcelona.',
     'findus.wa.heading': 'Reserva por WhatsApp',
     'findus.wa.desc':    'La forma más rápida de asegurar tu mesa. Te respondemos en minutos.',
     'findus.wa.cta':     'Escribirnos en WhatsApp',
-    'findus.hours.heading': 'Horario',
-    'findus.hours.tuesun':  'Mar &ndash; Dom',
-    'findus.hours.lunch':   '13:00 &ndash; 16:00',
-    'findus.hours.dinner':  '20:00 &ndash; 01:00',
-    'findus.hours.closed':  'Lunes: Cerrado',
+    'findus.row.location':  'Dirección',
+    'findus.row.hours':     'Horario',
+    'findus.row.phone':     'Teléfono',
+    'findus.row.instagram': 'Instagram',
+    'findus.hours.heading':  'Horario',
+    'findus.hours.everyday': 'Todos los días',
+    'findus.hours.range':    '13:00 &ndash; 01:00',
     'findus.address.heading': 'Dirección',
+    'findus.instagram':       'Síguenos en Instagram',
     'findus.phone.heading':   'Teléfono',
     'findus.map.aria':    'Mapa de ubicación de T-Born Brasa en Google Maps, Carrer del Comerç 24, Barcelona',
 
@@ -195,13 +205,19 @@ const translations = {
     'skip.nav': 'Anar al contingut',
 
     /* Nav */
-    'nav.about':    'Nosaltres',
-    'nav.menu':     'Carta',
-    'nav.gallery':  'Galeria',
-    'nav.findus':   "Troba'ns",
-    'nav.reserve':  'Reservar Taula',
+    'nav.about':      'Nosaltres',
+    'nav.menu':       'Carta',
+    'nav.gallery':    'Galeria',
+    'nav.findus':     "Troba'ns",
+    'nav.reserve':    'Reservar Taula',
     'nav.aria.open':  'Obrir menú de navegació',
     'nav.aria.close': 'Tancar menú de navegació',
+    'nav.aria.main':  'Navegació principal',
+    'nav.mobile.aria': 'Menú de navegació mòbil',
+    'nav.lang.aria':  'Seleccionar idioma',
+    'footer.nav.aria': 'Navegació del peu de pàgina',
+    'menu.aria.tabs': 'Categories del menú',
+    'findus.phone.aria': 'Trucar a T-Born Brasa',
 
     /* Loader */
     'loader.text': 'T-Born Brasa',
@@ -239,10 +255,11 @@ const translations = {
     'sel.card3.alt':   'Combo El Born de T-Born Brasa',
 
     /* Reviews */
-    'reviews.label':   'Opinions',
-    'reviews.heading': 'El que diuen els nostres clients',
-    'reviews.overall': 'a Google &middot; 127 ressenyes',
-    'reviews.google':  'Veure totes les ressenyes',
+    'reviews.label':      'Opinions',
+    'reviews.heading':    'El que diuen els nostres clients',
+    'reviews.overall':    'a Google &middot; 382 ressenyes',
+    'reviews.google':     'Veure totes les ressenyes',
+    'reviews.stars.aria': '4.9 de 5 estrelles',
 
     /* Menu section */
     'menu.label':   'La Carta',
@@ -337,17 +354,20 @@ const translations = {
 
     /* Find Us */
     'findus.label':      "Troba'ns",
-    'findus.heading':    'Visita\'ns al Born',
+    'findus.heading':    "T'Esperem al Born",
     'findus.sub':        'Al cor del Born, Barcelona.',
     'findus.wa.heading': 'Reserva per WhatsApp',
     'findus.wa.desc':    'La manera més ràpida d\'assegurar la teva taula. Et responem en minuts.',
     'findus.wa.cta':     'Escriu-nos per WhatsApp',
-    'findus.hours.heading': 'Horari',
-    'findus.hours.tuesun':  'Dim &ndash; Diu',
-    'findus.hours.lunch':   '13:00 &ndash; 16:00',
-    'findus.hours.dinner':  '20:00 &ndash; 01:00',
-    'findus.hours.closed':  'Dilluns: Tancat',
+    'findus.row.location':  'Adreça',
+    'findus.row.hours':     'Horari',
+    'findus.row.phone':     'Telèfon',
+    'findus.row.instagram': 'Instagram',
+    'findus.hours.heading':  'Horari',
+    'findus.hours.everyday': 'Cada dia',
+    'findus.hours.range':    '13:00 &ndash; 01:00',
     'findus.address.heading': 'Adreça',
+    'findus.instagram':       'Segueix-nos a Instagram',
     'findus.phone.heading':   'Telèfon',
     'findus.map.aria':    'Mapa d\'ubicació de T-Born Brasa a Google Maps, Carrer del Comerç 24, Barcelona',
 
@@ -376,13 +396,19 @@ const translations = {
     'skip.nav': 'Skip to content',
 
     /* Nav */
-    'nav.about':    'About',
-    'nav.menu':     'Menu',
-    'nav.gallery':  'Gallery',
-    'nav.findus':   'Find Us',
-    'nav.reserve':  'Book a Table',
+    'nav.about':      'About',
+    'nav.menu':       'Menu',
+    'nav.gallery':    'Gallery',
+    'nav.findus':     'Find Us',
+    'nav.reserve':    'Book a Table',
     'nav.aria.open':  'Open navigation menu',
     'nav.aria.close': 'Close navigation menu',
+    'nav.aria.main':  'Main navigation',
+    'nav.mobile.aria': 'Mobile navigation menu',
+    'nav.lang.aria':  'Select language',
+    'footer.nav.aria': 'Footer navigation',
+    'menu.aria.tabs': 'Menu categories',
+    'findus.phone.aria': 'Call T-Born Brasa',
 
     /* Loader */
     'loader.text': 'T-Born Brasa',
@@ -420,10 +446,11 @@ const translations = {
     'sel.card3.alt':   "T-Born Brasa's El Born Combo",
 
     /* Reviews */
-    'reviews.label':   'Reviews',
-    'reviews.heading': 'What Our Guests Say',
-    'reviews.overall': 'on Google &middot; 127 reviews',
-    'reviews.google':  'View all reviews',
+    'reviews.label':      'Reviews',
+    'reviews.heading':    'What Our Guests Say',
+    'reviews.overall':    'on Google &middot; 382 reviews',
+    'reviews.google':     'View all reviews',
+    'reviews.stars.aria': '4.9 out of 5 stars',
 
     /* Menu section */
     'menu.label':   'The Menu',
@@ -518,17 +545,20 @@ const translations = {
 
     /* Find Us */
     'findus.label':      'Find Us',
-    'findus.heading':    'Visit Us in El Born',
+    'findus.heading':    'Find Us in El Born',
     'findus.sub':        'In the heart of El Born, Barcelona.',
     'findus.wa.heading': 'Reserve via WhatsApp',
     'findus.wa.desc':    'The fastest way to secure your table. We reply within minutes.',
     'findus.wa.cta':     'Message Us on WhatsApp',
-    'findus.hours.heading': 'Hours',
-    'findus.hours.tuesun':  'Tue &ndash; Sun',
-    'findus.hours.lunch':   '13:00 &ndash; 16:00',
-    'findus.hours.dinner':  '20:00 &ndash; 01:00',
-    'findus.hours.closed':  'Monday: Closed',
+    'findus.row.location':  'Location',
+    'findus.row.hours':     'Hours',
+    'findus.row.phone':     'Phone',
+    'findus.row.instagram': 'Instagram',
+    'findus.hours.heading':  'Hours',
+    'findus.hours.everyday': 'Every day',
+    'findus.hours.range':    '13:00 &ndash; 01:00',
     'findus.address.heading': 'Address',
+    'findus.instagram':       'Follow us on Instagram',
     'findus.phone.heading':   'Phone',
     'findus.map.aria':    'Location map for T-Born Brasa on Google Maps, Carrer del Comerç 24, Barcelona',
 
@@ -555,7 +585,7 @@ const translations = {
 /* ── Public API ──────────────────────────────────────────── */
 
 function getLang() {
-  return localStorage.getItem(LANG_KEY) || 'es';
+  try { return localStorage.getItem(LANG_KEY) || 'es'; } catch { return 'es'; }
 }
 
 function applyLang(lang) {
@@ -573,10 +603,15 @@ function applyLang(lang) {
     el.innerHTML = value;
   });
 
-  /* Swap aria-label attributes */
+  /* Swap aria-label / img alt attributes */
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     const key = el.getAttribute('data-i18n-aria');
-    if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+    if (t[key] === undefined) return;
+    if (el.tagName === 'IMG') {
+      el.alt = t[key];
+    } else {
+      el.setAttribute('aria-label', t[key]);
+    }
   });
 
   /* Swap placeholder attributes */
@@ -609,7 +644,7 @@ function applyLang(lang) {
   /* Update <html lang> attribute */
   document.documentElement.lang = lang;
 
-  localStorage.setItem(LANG_KEY, lang);
+  try { localStorage.setItem(LANG_KEY, lang); } catch {}
 }
 
 function initLang() {

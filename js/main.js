@@ -2,14 +2,6 @@
    main.js — T-Born Brasa
    ============================================================ */
 
-/* ── Lenis smooth scroll ──────────────────────────────────── */
-(function () {
-  if (typeof Lenis === 'undefined') return;
-  const lenis = new Lenis({ duration: 1.1, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-  requestAnimationFrame(raf);
-})();
-
 /* ── Nav scroll handler ───────────────────────────────────── */
 (function () {
   const nav = document.getElementById('nav');
@@ -140,7 +132,9 @@
   const img = document.getElementById('hero-parallax-img');
   if (!img) return;
 
-  let ticking = false;
+  const hero = img.closest('#hero') || img.parentElement;
+  let ticking  = false;
+  let heroVisible = true;
 
   function update() {
     img.style.transform = `translateY(${window.scrollY * 0.38}px)`;
@@ -148,8 +142,45 @@
   }
 
   window.addEventListener('scroll', () => {
+    if (!heroVisible) return;
     if (!ticking) { requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
+
+  new IntersectionObserver(([entry]) => {
+    heroVisible = entry.isIntersecting;
+  }, { threshold: 0 }).observe(hero);
+})();
+
+/* ── About image parallax ─────────────────────────────────── */
+(function () {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  const img     = document.getElementById('about-parallax-img');
+  const section = document.getElementById('about');
+  if (!img || !section) return;
+
+  let ticking      = false;
+  let aboutVisible = false;
+
+  function update() {
+    const rect         = section.getBoundingClientRect();
+    const centerOffset = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+    /* Clamp to ±120px — matches the 240px extra image height (120px each side) */
+    const clamped = Math.max(-120, Math.min(120, centerOffset * 0.3));
+    img.style.transform = `translateY(${clamped}px)`;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!aboutVisible) return;
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+
+  new IntersectionObserver(([entry]) => {
+    aboutVisible = entry.isIntersecting;
+    if (aboutVisible) update();
+  }, { threshold: 0 }).observe(section);
 })();
 
 /* ── Scroll reveal — Intersection Observer ────────────────── */
@@ -184,10 +215,13 @@
     loader.addEventListener('transitionend', () => loader.remove(), { once: true });
   }
 
-  if (sessionStorage.getItem('visited')) {
+  let isReturn = false;
+  try { isReturn = !!sessionStorage.getItem('visited'); } catch {}
+  try { sessionStorage.setItem('visited', '1'); } catch {}
+
+  if (isReturn) {
     loader.remove();
   } else {
-    sessionStorage.setItem('visited', '1');
     if (document.readyState === 'complete') {
       setTimeout(dismiss, 800);
     } else {
@@ -233,17 +267,22 @@
   }
 
   function applyConsent(value) {
-    localStorage.setItem(CONSENT_KEY, value);
+    try { localStorage.setItem(CONSENT_KEY, value); } catch {}
     if (banner) banner.hidden = true;
     if (value === 'accepted') loadAnalytics();
   }
 
   function init() {
-    const stored = localStorage.getItem(CONSENT_KEY);
+    let stored = null;
+    try { stored = localStorage.getItem(CONSENT_KEY); } catch {}
     if (stored === 'accepted') {
       loadAnalytics();
     } else if (!stored && banner) {
-      setTimeout(() => { banner.hidden = false; }, 800);
+      setTimeout(() => {
+        banner.hidden = false;
+        const firstBtn = banner.querySelector('button');
+        if (firstBtn) firstBtn.focus();
+      }, 800);
     }
   }
 
@@ -255,3 +294,19 @@
 
 /* ── GA4 measurement ID placeholder ──────────────────────── */
 window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+/* ── Lenis smooth scroll ──────────────────────────────────── */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (typeof Lenis === 'undefined') return;
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+  });
+  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+})();

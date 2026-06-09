@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T-Born Brasa — Brasa y Ahumado en El Born, Barcelona</title>
-  <meta name="description" content="T-Born Brasa: brasa y ahumado lento en el corazón de El Born, Barcelona. Costillas, angus ribs y combos. Mar–Dom 13:00–16:00 y 20:00–01:00.">
+  <meta name="description" content="T-Born Brasa: brasa y ahumado lento en el corazón de El Born, Barcelona. Costillas, angus ribs y combos. Todos los días 13:00–01:00.">
   <meta name="theme-color" content="#0d0b09">
 
   <!-- Open Graph -->
@@ -33,8 +33,8 @@
 
   <!-- Preloads: hero image + both fonts (required per project rules) -->
   <link rel="preload" as="image"
-        href="images/Hero.webp"
-        imagesrcset="images/Hero-mobile.webp 750w, images/Hero.webp 1920w"
+        href="images/Hero1.webp"
+        imagesrcset="images/Hero1-mobile.webp 750w, images/Hero1.webp 1920w"
         imagesizes="100vw"
         fetchpriority="high">
   <link rel="preload" as="font" href="fonts/PlayfairDisplay-Bold.woff2" type="font/woff2" crossorigin>
@@ -43,6 +43,14 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css" media="print">
+
+  <!-- No-JS fallback: reveal hidden elements, remove loader -->
+  <noscript><style>
+    .loader { display: none !important; }
+    .reveal, .reveal--fade, .reveal--heading, .reveal--scale { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .menu__panel--hidden { display: block !important; }
+    .menu__tabs { display: none !important; }
+  </style></noscript>
 
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -73,22 +81,16 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens": "13:00",
-        "closes": "16:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "20:00",
         "closes": "01:00"
       }
     ],
     "sameAs": ["https://www.instagram.com/tbornbrasa/"],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": 127,
+      "ratingValue": "4.9",
+      "reviewCount": 382,
       "bestRating": "5",
       "worstRating": "1"
     }
@@ -113,11 +115,11 @@
 
       <!-- Logo -->
       <a href="/" class="nav__logo" aria-label="T-Born Brasa — inicio">
-        <img src="images/Logo.webp" alt="T-Born Brasa" width="120" height="52" loading="eager">
+        <img src="images/Logo.webp" alt="T-Born Brasa" width="320" height="320" loading="eager">
       </a>
 
       <!-- Desktop center links -->
-      <nav class="nav__links" aria-label="Navegación principal">
+      <nav class="nav__links" data-i18n-aria="nav.aria.main" aria-label="Navegación principal">
         <a href="#about"   data-i18n="nav.about">Nosotros</a>
         <a href="#menu"    data-i18n="nav.menu">Carta</a>
         <a href="#gallery" data-i18n="nav.gallery">Galería</a>
@@ -153,6 +155,9 @@
   <!-- Mobile nav overlay -->
   <nav id="nav-mobile"
        class="nav__mobile"
+       role="dialog"
+       aria-modal="true"
+       data-i18n-aria="nav.mobile.aria"
        aria-label="Menú móvil"
        aria-hidden="true">
     <ul>
@@ -179,15 +184,16 @@
     <!-- ════════════════════════════════════════════════════
          HERO
          ════════════════════════════════════════════════════ -->
-    <section id="hero" aria-label="Hero">
+    <section id="hero" aria-label="Presentación">
 
       <!-- Background image with parallax -->
       <div class="hero__bg" aria-hidden="true">
         <picture>
-          <source media="(max-width: 767px)" srcset="images/Hero-mobile.webp">
+          <source media="(max-width: 767px)" srcset="images/Hero1-mobile.webp" type="image/webp">
+          <source srcset="images/Hero1.webp" type="image/webp">
           <img
             id="hero-parallax-img"
-            src="images/Hero.webp"
+            src="images/Hero1.jpg"
             alt=""
             width="1920"
             height="1080"
@@ -204,7 +210,6 @@
             <p class="hero__eyebrow" data-i18n="hero.eyebrow">El Born &middot; Barcelona</p>
             <h2 class="hero__headline" data-i18n="hero.headline">Fuego, tiempo y sabor</h2>
             <p class="hero__sub" data-i18n="hero.sub">Brasa y ahumado lento en el corazón de El Born. Carnes seleccionadas, técnica de fuego auténtica.</p>
-            <a href="#find-us" class="btn btn--primary hero__cta" data-i18n="hero.cta">Reservar Mesa</a>
           </div>
         </div>
       </div>
@@ -220,9 +225,10 @@
           <!-- Image (right on desktop, top on mobile) -->
           <div class="about__image-wrap reveal--scale">
             <img
+              id="about-parallax-img"
               class="about__image"
-              src="images/interior1.webp"
-              alt="Interior del restaurante T-Born Brasa"
+              src="images/food1.webp"
+              alt="Plato de brasa de T-Born Brasa"
               data-i18n-aria="about.img.alt"
               width="800"
               height="600"
@@ -234,9 +240,8 @@
           <div class="about__text">
             <span class="section-label reveal" data-i18n="about.label">Nuestra historia</span>
             <h2 class="reveal--heading" data-i18n="about.heading">El Arte del Fuego</h2>
-            <p class="reveal" style="transition-delay: 80ms" data-i18n="about.p1">En T-Born Brasa no solo cocinamos carne: la transformamos. Cada pieza pasa horas sobre el fuego y el humo de madera de encina, desarrollando una complejidad de sabor que solo el tiempo puede crear.</p>
-            <p class="reveal" style="transition-delay: 160ms" data-i18n="about.p2">En el corazón de El Born, nuestro restaurante es un homenaje a la cocina de brasa más auténtica. Carnes de primera selección, ahumados lentos y una pasión por el producto que se siente en cada bocado.</p>
-            <a href="#find-us" class="about__cta reveal" style="transition-delay: 240ms" data-i18n="about.cta">Descubrir nuestra historia &rarr;</a>
+            <p class="reveal" data-i18n="about.p1">En T-Born Brasa no solo cocinamos carne: la transformamos. Cada pieza pasa horas sobre el fuego y el humo de madera de encina, desarrollando una complejidad de sabor que solo el tiempo puede crear.</p>
+            <p class="reveal" data-i18n="about.p2">En el corazón de El Born, nuestro restaurante es un homenaje a la cocina de brasa más auténtica. Carnes de primera selección, ahumados lentos y una pasión por el producto que se siente en cada bocado.</p>
           </div>
 
         </div>
@@ -321,62 +326,9 @@
     </section>
 
     <!-- ════════════════════════════════════════════════════
-         REVIEWS
-         ════════════════════════════════════════════════════ -->
-    <section id="reviews" class="section">
-      <div class="container">
-        <div class="section-header" style="text-align:center; margin-bottom: 3rem;">
-          <span class="section-label reveal" data-i18n="reviews.label">Opiniones</span>
-          <h2 class="reveal--heading" data-i18n="reviews.heading">Lo que dicen nuestros clientes</h2>
-          <div class="reviews__overall reveal">
-            <span class="reviews__stars" role="img" aria-label="4.8 de 5 estrellas">★★★★★</span>
-            <span class="reviews__score">4.8</span>
-            <span class="reviews__count" data-i18n="reviews.overall">4.8 en Google &middot; 127 reseñas</span>
-          </div>
-        </div>
-
-        <div class="reviews__grid stagger-group">
-
-          <article class="review-card reveal">
-            <div class="review-card__stars" role="img" aria-label="5 estrellas">★★★★★</div>
-            <p class="review-card__text">La carne es increíble, especialmente las costillas ahumadas. El ambiente es perfecto para una noche especial.</p>
-            <p class="review-card__author">María G.</p>
-          </article>
-
-          <article class="review-card reveal">
-            <div class="review-card__stars" role="img" aria-label="5 stars">★★★★★</div>
-            <p class="review-card__text">Best ribs in Barcelona. The slow smoked Angus ribs were absolutely phenomenal. Will be back.</p>
-            <p class="review-card__author">James T.</p>
-          </article>
-
-          <article class="review-card reveal">
-            <div class="review-card__stars" role="img" aria-label="5 estrelles">★★★★★</div>
-            <p class="review-card__text">Lloc perfecte per sopar al Born. La qualitat de la carn és excel·lent i el servei molt atent.</p>
-            <p class="review-card__author">Pau R.</p>
-          </article>
-
-          <article class="review-card reveal">
-            <div class="review-card__stars" role="img" aria-label="5 estrellas">★★★★★</div>
-            <p class="review-card__text">El combo El Born para dos personas es una experiencia increíble. Recomendadísimo.</p>
-            <p class="review-card__author">Carlos M.</p>
-          </article>
-
-        </div><!-- /.stagger-group -->
-
-        <div style="text-align:center; margin-top: 2.5rem;">
-          <a href="https://g.page/r/tbornbrasa/review"
-             class="about__cta reveal"
-             target="_blank"
-             rel="noopener"
-             data-i18n="reviews.google">Ver todas las reseñas</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════════════════════════════════════════════════
          MENU
          ════════════════════════════════════════════════════ -->
-    <section id="menu" class="section section--alt">
+    <section id="menu" class="section">
       <div class="container">
 
         <div class="section-header">
@@ -385,7 +337,7 @@
         </div>
 
         <!-- Tab list -->
-        <div class="menu__tabs" role="tablist" aria-label="Categorías del menú">
+        <div class="menu__tabs" role="tablist" data-i18n-aria="menu.aria.tabs" aria-label="Categorías del menú">
 
           <button class="menu__tab menu__tab--active"
                   role="tab"
@@ -716,60 +668,115 @@
     <!-- ════════════════════════════════════════════════════
          GALLERY
          ════════════════════════════════════════════════════ -->
-    <section id="gallery" class="section">
+    <section id="gallery" class="section section--alt">
       <div class="container">
+
         <div class="section-header">
           <span class="section-label reveal" data-i18n="gallery.label">La Experiencia</span>
           <h2 class="reveal--heading" data-i18n="gallery.heading">Déjate llevar por el sabor</h2>
         </div>
 
-        <div class="gallery__grid stagger-group">
+        <div class="gallery__grid">
 
-          <div class="gallery__item reveal">
-            <img
-              src="images/food4.webp"
-              alt="Brasa encendida en T-Born Brasa"
-              data-i18n-aria="gallery.img1.alt"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async">
+          <div class="gallery__item reveal" style="transition-delay:0.00s">
+            <img src="images/food1.webp" alt="Brasa de T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
           </div>
 
-          <div class="gallery__item reveal">
-            <img
-              src="images/food5.webp"
-              alt="Plato de costillas ahumadas de T-Born Brasa"
-              data-i18n-aria="gallery.img2.alt"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async">
+          <div class="gallery__item reveal" style="transition-delay:0.05s">
+            <img src="images/food2.webp" alt="Costillas ahumadas T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
           </div>
 
-          <div class="gallery__item reveal">
-            <img
-              src="images/food6.webp"
-              alt="Interior del restaurante T-Born Brasa en El Born"
-              data-i18n-aria="gallery.img3.alt"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async">
+          <div class="gallery__item reveal" style="transition-delay:0.10s">
+            <img src="images/food3.webp" alt="Plato de brasa T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
           </div>
 
+          <div class="gallery__item reveal" style="transition-delay:0.15s">
+            <img src="images/food4.webp" alt="Angus ribs T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.20s">
+            <img src="images/food5.webp" alt="Combo El Born T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.25s">
+            <img src="images/food6.webp" alt="Detalle de brasa T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.30s">
+            <img src="images/food7.webp" alt="Carne a la brasa T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.35s">
+            <img src="images/food8.webp" alt="Selección de carnes T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.40s">
+            <img src="images/food9.webp" alt="Brasa lenta T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.45s">
+            <img src="images/dessert1.webp" alt="Postre de T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+          <div class="gallery__item reveal" style="transition-delay:0.50s">
+            <img src="images/interior1.webp" alt="Interior del restaurante T-Born Brasa" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+
+        </div><!-- /.gallery__grid -->
+
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
+         REVIEWS
+         ════════════════════════════════════════════════════ -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal" data-i18n="reviews.label">Opiniones</span>
+          <h2 class="reveal--heading" data-i18n="reviews.heading">Lo que dicen nuestros clientes</h2>
+          <div class="reviews__overall reveal">
+            <span class="reviews__stars" role="img" data-i18n-aria="reviews.stars.aria" aria-label="4.9 de 5 estrellas">★★★★★</span>
+            <span class="reviews__score">4.9</span>
+            <span class="reviews__count" data-i18n="reviews.overall">en Google &middot; 382 reseñas</span>
+          </div>
         </div>
 
-        <div class="gallery__instagram reveal">
-          <a
-            href="https://www.instagram.com/tbornbrasa/"
-            class="gallery__handle"
-            target="_blank"
-            rel="noopener"
-            aria-label="Visitar @tbornbrasa en Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @tbornbrasa
-          </a>
+        <div class="reviews__grid stagger-group">
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 estrellas">★★★★★</div>
+            <p class="review-card__text">La carne es increíble, especialmente las costillas ahumadas. El ambiente es perfecto para una noche especial.</p>
+            <p class="review-card__author">María G.</p>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 stars">★★★★★</div>
+            <p class="review-card__text">Best ribs in Barcelona. The slow smoked Angus ribs were absolutely phenomenal. Will be back.</p>
+            <p class="review-card__author">James T.</p>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 estrelles">★★★★★</div>
+            <p class="review-card__text">Lloc perfecte per sopar al Born. La qualitat de la carn és excel·lent i el servei molt atent.</p>
+            <p class="review-card__author">Pau R.</p>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-card__stars" role="img" aria-label="5 estrellas">★★★★★</div>
+            <p class="review-card__text">El combo El Born para dos personas es una experiencia increíble. Recomendadísimo.</p>
+            <p class="review-card__author">Carlos M.</p>
+          </article>
+
+        </div><!-- /.stagger-group -->
+
+        <div class="reviews__more">
+          <a href="https://www.google.com/maps/place/T-Born+Brasa/@41.3886571,2.1814383,17z/data=!4m16!1m7!3m6!1s0x12a4a39956c22ce5:0x91fa9131b8637d22!2sT-Born+Brasa!8m2!3d41.3886319!4d2.1812486!16s%2Fg%2F11n9w5b_xj!3m7!1s0x12a4a39956c22ce5:0x91fa9131b8637d22!8m2!3d41.3886319!4d2.1812486!9m1!1b1!16s%2Fg%2F11n9w5b_xj?authuser=0&entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
+             class="about__cta reveal"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-i18n="reviews.google">Ver todas las reseñas</a>
         </div>
       </div>
     </section>
@@ -780,9 +787,9 @@
     <section id="find-us" class="section section--alt">
       <div class="container">
 
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+        <div class="section-header">
           <span class="section-label reveal" data-i18n="findus.label">Encuéntranos</span>
-          <h2 class="reveal--heading" data-i18n="findus.heading">Visítanos en El Born</h2>
+          <h2 class="reveal--heading" data-i18n="findus.heading">Te Esperamos en El Born</h2>
         </div>
 
         <div class="findus__grid">
@@ -799,7 +806,7 @@
                 class="btn btn--wa whatsapp-link"
                 data-phone="+34935577591"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 title="Reserva por WhatsApp"
                 data-i18n-title="whatsapp.tooltip">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -807,35 +814,54 @@
               </a>
             </div>
 
-            <!-- Info blocks -->
-            <div class="findus__info">
+            <!-- Info rows -->
+            <div class="findus__rows">
 
-              <div class="findus__info-block reveal">
-                <h3 data-i18n="findus.hours.heading">Horario</h3>
-                <dl class="findus__hours">
-                  <dt data-i18n="findus.hours.tuesun">Mar &ndash; Dom</dt>
-                  <dd>
-                    <span data-i18n="findus.hours.lunch">13:00 &ndash; 16:00</span> /
-                    <span data-i18n="findus.hours.dinner">20:00 &ndash; 01:00</span>
-                  </dd>
-                  <dt class="hours-closed" data-i18n="findus.hours.closed">Lunes: Cerrado</dt>
-                  <dd class="hours-closed">&mdash;</dd>
-                </dl>
+              <div class="findus__row reveal">
+                <span class="findus__row-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C12 21 5 13.5 5 8.5A7 7 0 0 1 19 8.5C19 13.5 12 21 12 21z"/><circle cx="12" cy="8.5" r="2.5"/></svg>
+                </span>
+                <div class="findus__row-content">
+                  <span class="findus__row-label" data-i18n="findus.row.location">DIRECCIÓN</span>
+                  <span class="findus__row-value">Carrer del Comerç, 24 / 08003 Barcelona</span>
+                </div>
               </div>
 
-              <div class="findus__info-block reveal">
-                <h3 data-i18n="findus.address.heading">Dirección</h3>
-                <address class="findus__address">
-                  Carrer del Comerç, 24<br>
-                  08003 Barcelona
-                </address>
+              <div class="findus__row reveal">
+                <span class="findus__row-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <div class="findus__row-content">
+                  <span class="findus__row-label" data-i18n="findus.row.hours">HORARIO</span>
+                  <span class="findus__row-value">
+                    <span data-i18n="findus.hours.everyday">Todos los días</span> /
+                    <span data-i18n="findus.hours.range">13:00 &ndash; 01:00</span>
+                  </span>
+                </div>
               </div>
 
-              <div class="findus__info-block reveal">
-                <h3 data-i18n="findus.phone.heading">Teléfono</h3>
-                <p class="findus__phone">
-                  <a href="tel:+34935577591" aria-label="Llamar a T-Born Brasa">+34 935 577 591</a>
-                </p>
+              <div class="findus__row reveal">
+                <span class="findus__row-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div class="findus__row-content">
+                  <span class="findus__row-label" data-i18n="findus.row.phone">TELÉFONO</span>
+                  <span class="findus__row-value">
+                    <a href="tel:+34935577591" data-i18n-aria="findus.phone.aria" aria-label="Llamar a T-Born Brasa">+34 935 577 591</a>
+                  </span>
+                </div>
+              </div>
+
+              <div class="findus__row reveal">
+                <span class="findus__row-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <div class="findus__row-content">
+                  <span class="findus__row-label" data-i18n="findus.row.instagram">INSTAGRAM</span>
+                  <span class="findus__row-value">
+                    <a href="https://www.instagram.com/tbornbrasa/" target="_blank" rel="noopener noreferrer" data-i18n="findus.instagram">Síguenos en Instagram</a>
+                  </span>
+                </div>
               </div>
 
             </div>
@@ -844,13 +870,14 @@
           <!-- Right: Map -->
           <div class="findus__map reveal--scale">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1!2d2.1813!3d41.3840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f7c4b0b0b0%3A0x0!2sCarrer+del+Comer%C3%A7%2C+24%2C+Barcelona!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.8!2d2.1786!3d41.3886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a39956c22ce5%3A0x91fa9131b8637d22!2sT-Born%20Brasa!5e0!3m2!1ses!2ses!4v1&iwloc=B"
               width="600"
               height="450"
               style="border:0;"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin allow-popups"
               title="Mapa de ubicación de T-Born Brasa"
               data-i18n-aria="findus.map.aria"
               aria-label="Mapa de ubicación de T-Born Brasa en Google Maps, Carrer del Comerç 24, Barcelona">
@@ -870,22 +897,22 @@
 
         <!-- Logo -->
         <a href="/" class="footer__logo" aria-label="T-Born Brasa — inicio">
-          <img src="images/Logo.webp" alt="T-Born Brasa" width="100" height="44" loading="lazy" decoding="async">
+          <img src="images/Logo.webp" alt="T-Born Brasa" width="320" height="320" loading="lazy" decoding="async">
         </a>
 
         <!-- Nav links -->
-        <nav class="footer__nav" aria-label="Navegación del pie de página">
+        <nav class="footer__nav" data-i18n-aria="footer.nav.aria" aria-label="Navegación del pie de página">
           <a href="#about"   data-i18n="nav.about">Nosotros</a>
           <a href="#menu"    data-i18n="nav.menu">Carta</a>
           <a href="#gallery" data-i18n="nav.gallery">Galería</a>
           <a href="#find-us" data-i18n="nav.findus">Encuéntranos</a>
           <a href="privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
-          <a href="https://www.instagram.com/tbornbrasa/" target="_blank" rel="noopener" data-i18n="footer.instagram">Instagram</a>
+          <a href="https://www.instagram.com/tbornbrasa/" target="_blank" rel="noopener noreferrer" data-i18n="footer.instagram">Instagram</a>
         </nav>
 
         <!-- Right: lang switcher + copyright -->
         <div class="footer__right">
-          <div class="nav__lang" role="group" aria-label="Seleccionar idioma">
+          <div class="nav__lang" role="group" data-i18n-aria="nav.lang.aria" aria-label="Seleccionar idioma">
             <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
             <button class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
             <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
@@ -921,9 +948,10 @@
     class="whatsapp-btn whatsapp-link"
     data-phone="+34935577591"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     title="Reserva por WhatsApp"
     data-i18n-title="whatsapp.tooltip"
+    data-i18n-aria="whatsapp.tooltip"
     aria-label="Reserva por WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -942,9 +970,9 @@
   </button>
 
   <!-- ── SCRIPTS ─────────────────────────────────────────── -->
-  <script src="js/lenis.min.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/lenis.min.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>
