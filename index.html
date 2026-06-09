@@ -96,6 +96,8 @@
     }
   }
   </script>
+
+  <!-- GA4: add client measurement ID when available -->
 </head>
 
 <body>
@@ -129,7 +131,7 @@
       <!-- Right side actions -->
       <div class="nav__actions">
         <!-- Language switcher (desktop) -->
-        <div class="nav__lang" role="group" aria-label="Seleccionar idioma">
+        <div class="nav__lang" role="group" data-i18n-aria="nav.lang.aria" aria-label="Seleccionar idioma">
           <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
           <button class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
           <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
@@ -168,7 +170,7 @@
     </ul>
     <a href="#find-us" class="btn btn--outline nav__mobile-cta" data-i18n="nav.reserve">Reservar Mesa</a>
     <!-- Language switcher (mobile) -->
-    <div class="nav__lang" role="group" aria-label="Seleccionar idioma">
+    <div class="nav__lang" role="group" data-i18n-aria="nav.lang.aria" aria-label="Seleccionar idioma">
       <button class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
       <button class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
       <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
@@ -394,7 +396,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.ent1.name">Tomate con Burrata</h3>
+                <h4 class="menu-item__name" data-i18n="menu.ent1.name">Tomate con Burrata</h4>
                 <span class="menu-item__price">€10</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.ent1.desc">Tomate de temporada, burrata cremosa, albahaca fresca y aceite de oliva virgen extra.</p>
@@ -402,7 +404,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.ent2.name">Ensalada de Pepino y Tomate</h3>
+                <h4 class="menu-item__name" data-i18n="menu.ent2.name">Ensalada de Pepino y Tomate</h4>
                 <span class="menu-item__price">€10</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.ent2.desc">Ensalada fresca de pepino crujiente, tomate cherry, hierbas y aliño de limón.</p>
@@ -410,7 +412,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.ent3.name">Tuétano de Vaca Asado con Steak Tartar</h3>
+                <h4 class="menu-item__name" data-i18n="menu.ent3.name">Tuétano de Vaca Asado con Steak Tartar</h4>
                 <span class="menu-item__price">€25</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.ent3.desc">Tuétano de vaca asado a la brasa con steak tartar artesano y pan de payés tostado.</p>
@@ -418,7 +420,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.ent4.name">Carrillera de Ternera Estofada</h3>
+                <h4 class="menu-item__name" data-i18n="menu.ent4.name">Carrillera de Ternera Estofada</h4>
                 <span class="menu-item__price">€25</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.ent4.desc">Carrillera cocinada a baja temperatura durante 12 horas, con jugo de brasa y parmentier.</p>
@@ -426,7 +428,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.ent5.name">Provolone con Tomates Secos</h3>
+                <h4 class="menu-item__name" data-i18n="menu.ent5.name">Provolone con Tomates Secos</h4>
                 <span class="menu-item__price">€14</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.ent5.desc">Provolone fundido a la plancha con tomates secos, orégano y aceite de albahaca.</p>
@@ -441,7 +443,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.smk1.name">Costillas de Cerdo (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.smk1.name">Costillas de Cerdo (350g)</h4>
                 <span class="menu-item__price">€35</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.smk1.desc">Ahumadas lentamente 6 horas con madera de encina. Jugosas y tiernas.</p>
@@ -449,7 +451,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.smk2.name">Costillas Angus (700g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.smk2.name">Costillas Angus (700g)</h4>
                 <span class="menu-item__price">€48</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.smk2.desc">Costillas premium Angus, 8 horas al humo, glaseadas con salsa BBQ de la casa.</p>
@@ -457,7 +459,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.smk3.name">Ternera Desmechada (200g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.smk3.name">Ternera Desmechada (200g)</h4>
                 <span class="menu-item__price">€24</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.smk3.desc">Ternera ahumada y desmechada a mano, servida con pan de payés tostado.</p>
@@ -465,7 +467,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.smk4.name">Cerdo Desmechado (400g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.smk4.name">Cerdo Desmechado (400g)</h4>
                 <span class="menu-item__price">€18</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.smk4.desc">Paleta de cerdo ahumada lentamente, suculenta y tierna.</p>
@@ -473,7 +475,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.smk5.name">Combo Especial &ldquo;El Born&rdquo;</h3>
+                <h4 class="menu-item__name" data-i18n="menu.smk5.name">Combo Especial &ldquo;El Born&rdquo;</h4>
                 <span class="menu-item__price">€100</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.smk5.desc">Costillas de cerdo, cerdo desmechado y ternera. 1kg para 2 personas.</p>
@@ -481,7 +483,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.smk6.name">Combo Premium &ldquo;La Ciutat Vella&rdquo;</h3>
+                <h4 class="menu-item__name" data-i18n="menu.smk6.name">Combo Premium &ldquo;La Ciutat Vella&rdquo;</h4>
                 <span class="menu-item__price">€140</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.smk6.desc">Selección premium con costillas Angus, ternera desmechada y más. Para 2&ndash;3 personas.</p>
@@ -496,7 +498,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.brs1.name">Costilla de Ternera (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.brs1.name">Costilla de Ternera (350g)</h4>
                 <span class="menu-item__price">€26</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.brs1.desc">Costilla de ternera a la brasa, punto jugoso y sabor intenso.</p>
@@ -504,7 +506,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.brs2.name">Falda de Ternera (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.brs2.name">Falda de Ternera (350g)</h4>
                 <span class="menu-item__price">€26</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.brs2.desc">Corte sabroso, marinado y asado a fuego vivo sobre la brasa.</p>
@@ -512,7 +514,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.brs3.name">Vacío (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.brs3.name">Vacío (350g)</h4>
                 <span class="menu-item__price">€26</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.brs3.desc">El corte argentino por excelencia: tierno, sabroso y con carácter.</p>
@@ -520,7 +522,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.brs4.name">Tri-Tip (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.brs4.name">Tri-Tip (350g)</h4>
                 <span class="menu-item__price">€35</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.brs4.desc">Corte americano de lomo bajo, jugoso y muy sabroso a la brasa.</p>
@@ -528,7 +530,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.brs5.name">Solomillo (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.brs5.name">Solomillo (350g)</h4>
                 <span class="menu-item__price">€38</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.brs5.desc">El corte más tierno de la ternera. Perfección a la brasa.</p>
@@ -536,7 +538,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.brs6.name">Entrecot (350g)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.brs6.name">Entrecot (350g)</h4>
                 <span class="menu-item__price">€38</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.brs6.desc">Veteado perfecto para una experiencia intensa y rica en boca.</p>
@@ -551,7 +553,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.arr1.name">Paella de Solomillo</h3>
+                <h4 class="menu-item__name" data-i18n="menu.arr1.name">Paella de Solomillo</h4>
                 <span class="menu-item__price">€60</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.arr1.desc">Arroz meloso con solomillo de ternera braseado. Para 2 personas.</p>
@@ -559,7 +561,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.arr2.name">Paella de Pollo Asado</h3>
+                <h4 class="menu-item__name" data-i18n="menu.arr2.name">Paella de Pollo Asado</h4>
                 <span class="menu-item__price">1p €29 / 2p €54 / 3p €81</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.arr2.desc">Arroz con pollo asado a la brasa y caldo de primera.</p>
@@ -567,7 +569,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.arr3.name">Paella de Paletilla de Cerdo Ibérico</h3>
+                <h4 class="menu-item__name" data-i18n="menu.arr3.name">Paella de Paletilla de Cerdo Ibérico</h4>
                 <span class="menu-item__price">1p €31 / 2p €56 / 3p €84</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.arr3.desc">Arroz con paletilla ibérica ahumada y matices de brasa.</p>
@@ -582,7 +584,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.acp1.name">Arroz Blanco</h3>
+                <h4 class="menu-item__name" data-i18n="menu.acp1.name">Arroz Blanco</h4>
                 <span class="menu-item__price">€6</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.acp1.desc">Para acompañar todos nuestros platos.</p>
@@ -590,7 +592,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.acp2.name">Patatas Fritas</h3>
+                <h4 class="menu-item__name" data-i18n="menu.acp2.name">Patatas Fritas</h4>
                 <span class="menu-item__price">€6</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.acp2.desc">Caseras, crujientes y doradas.</p>
@@ -598,7 +600,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.acp3.name">Verduras a la Brasa</h3>
+                <h4 class="menu-item__name" data-i18n="menu.acp3.name">Verduras a la Brasa</h4>
                 <span class="menu-item__price">€6</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.acp3.desc">Selección de verduras de temporada a la brasa.</p>
@@ -606,7 +608,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.acp4.name">Pan de Payés</h3>
+                <h4 class="menu-item__name" data-i18n="menu.acp4.name">Pan de Payés</h4>
                 <span class="menu-item__price">€6</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.acp4.desc">Pan artesano con aceite virgen y tomate de temporada.</p>
@@ -621,7 +623,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.pos1.name">Tarta de Queso Casera</h3>
+                <h4 class="menu-item__name" data-i18n="menu.pos1.name">Tarta de Queso Casera</h4>
                 <span class="menu-item__price">€12</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.pos1.desc">Receta de la casa, cremosa, suave y con base crujiente.</p>
@@ -629,7 +631,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.pos2.name">Coulant con Helado</h3>
+                <h4 class="menu-item__name" data-i18n="menu.pos2.name">Coulant con Helado</h4>
                 <span class="menu-item__price">€12</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.pos2.desc">Coulant de chocolate negro con interior fundente y helado de vainilla.</p>
@@ -637,7 +639,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.pos3.name">Helado (2 bolas)</h3>
+                <h4 class="menu-item__name" data-i18n="menu.pos3.name">Helado (2 bolas)</h4>
                 <span class="menu-item__price">€9</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.pos3.desc">Selección del día. Pregunta a tu camarero.</p>
@@ -645,7 +647,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.pos4.name">Tarta de Chocolate</h3>
+                <h4 class="menu-item__name" data-i18n="menu.pos4.name">Tarta de Chocolate</h4>
                 <span class="menu-item__price">€12</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.pos4.desc">Intensa y cremosa, con ganache de chocolate negro.</p>
@@ -653,7 +655,7 @@
 
             <div class="menu-item reveal">
               <div class="menu-item__header">
-                <h3 class="menu-item__name" data-i18n="menu.pos5.name">Red Velvet</h3>
+                <h4 class="menu-item__name" data-i18n="menu.pos5.name">Red Velvet</h4>
                 <span class="menu-item__price">€13</span>
               </div>
               <p class="menu-item__desc" data-i18n="menu.pos5.desc">Con frosting de queso crema y cobertura de cacao.</p>

@@ -252,32 +252,16 @@
   const btnAccept    = document.getElementById('cookie-accept');
   const btnNecessary = document.getElementById('cookie-necessary');
 
-  function loadAnalytics() {
-    const id = window.GA_MEASUREMENT_ID;
-    if (!id || id === 'G-XXXXXXXXXX') return;
-    const s = document.createElement('script');
-    s.src   = `https://www.googletagmanager.com/gtag/js?id=${id}`;
-    s.async = true;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', id);
-  }
-
   function applyConsent(value) {
     try { localStorage.setItem(CONSENT_KEY, value); } catch {}
     if (banner) banner.hidden = true;
-    if (value === 'accepted') loadAnalytics();
+    /* GA4: load analytics here when client measurement ID is available */
   }
 
   function init() {
     let stored = null;
     try { stored = localStorage.getItem(CONSENT_KEY); } catch {}
-    if (stored === 'accepted') {
-      loadAnalytics();
-    } else if (!stored && banner) {
+    if (!stored && banner) {
       setTimeout(() => {
         banner.hidden = false;
         const firstBtn = banner.querySelector('button');
@@ -291,9 +275,6 @@
 
   init();
 })();
-
-/* ── GA4 measurement ID placeholder ──────────────────────── */
-window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
 
 /* ── Lenis smooth scroll ──────────────────────────────────── */
 (function () {
