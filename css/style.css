@@ -661,6 +661,16 @@ h3 {
   margin-top: var(--space-6);
   width: 100%;
   max-width: 240px;
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  border-color: var(--color-gold);
+  border-radius: 6px;
+}
+
+.nav__mobile .nav__mobile-cta:hover,
+.nav__mobile .nav__mobile-cta:focus-visible {
+  background-color: var(--color-gold-dk);
+  border-color: var(--color-gold-dk);
 }
 
 .nav__mobile .nav__lang {
